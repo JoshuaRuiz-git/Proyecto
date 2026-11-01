@@ -126,3 +126,112 @@ hr {
     animation: none;
   }
 }
+
+/* 2. TEMA CLARO Y VARIABLES PREPARADAS PARA TEMA OSCURO */
+:root {
+  color-scheme: light;
+ 
+  /* Fondos y superficies */
+  --color-fondo: #F5F7FB;
+  --color-superficie: #FFFFFF;
+  --color-superficie-alt: #F5F7FB;
+  --color-tarjeta: #FFFFFF;
+  --color-campo: #FFFFFF;
+ 
+  /* Texto */
+  --color-texto: #17243A;
+  --color-texto-secundario: #5B6B82;
+  --color-texto-tenue: #66758C;
+ 
+  /* Bordes y foco */
+  --color-borde: #E4E9F1;
+  --color-borde-fuerte: #CBD3E1;
+  --color-foco: #4F5FD5;
+  --anillo-foco: 0 0 0 3px rgba(79, 95, 213, 0.25);
+ 
+  /* Color principal: índigo */
+  --color-primario: #4F5FD5;
+  --color-primario-hover: #4354D2;
+  --color-primario-suave: #F5F6FF;
+  --color-primario-borde: #CCD0EE;
+  --color-primario-texto: #4354D2;
+  --color-sobre-primario: #FFFFFF;
+ 
+  /* Color secundario: turquesa */
+  --color-secundario: #25AFA0;
+  --color-secundario-suave: #E9F7F3;
+  --color-secundario-texto: #0F766E;
+ 
+  /* Color de acento: coral */
+  --color-acento: #F28B71;
+  --color-acento-suave: #FFEFE9;
+  --color-acento-texto: #B4532F;
+ 
+  /* Estados */
+  --color-exito: var(--color-secundario);
+  --color-exito-suave: var(--color-secundario-suave);
+  --color-exito-borde: #BFE6DF;
+  --color-exito-texto: var(--color-secundario-texto);
+ 
+  --color-advertencia: var(--color-acento);
+  --color-advertencia-suave: var(--color-acento-suave);
+  --color-advertencia-borde: #F8CFC3;
+  --color-advertencia-texto: var(--color-acento-texto);
+ 
+  --color-error: #D64550;
+  --color-error-suave: #FDECEE;
+  --color-error-borde: #F4B8BE;
+  --color-error-texto: #B3303B;
+ 
+  /* Sombras */
+  --sombra-sm: 0 1px 2px rgba(23, 36, 58, 0.06);
+  --sombra-md: 0 4px 16px rgba(23, 36, 58, 0.08);
+  --sombra-lg: 0 12px 32px rgba(23, 36, 58, 0.12);
+}
+ 
+/* Tema oscuro */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+ 
+  --color-fondo: #101827;
+  --color-superficie: #182337;
+  --color-superficie-alt: #182337;
+  --color-tarjeta: #202D42;
+  --color-campo: #101827;
+ 
+  --color-texto: #EDF2F8;
+  --color-texto-secundario: #A3B0C5;
+  --color-texto-tenue: #8E9BB2;
+ 
+  --color-borde: #304057;
+  --color-borde-fuerte: #41536E;
+  --color-foco: #8292FF;
+  --anillo-foco: 0 0 0 3px rgba(130, 146, 255, 0.3);
+ 
+  --color-primario: #8292FF;
+  --color-primario-hover: #98A5FF;
+  --color-primario-suave: #1C2644;
+  --color-primario-borde: #34426E;
+  --color-primario-texto: #8292FF;
+  --color-sobre-primario: #101827;
+ 
+  --color-secundario: #35C5B0;
+  --color-secundario-suave: #12302E;
+  --color-secundario-texto: #35C5B0;
+ 
+  --color-acento: #FF987F;
+  --color-acento-suave: #3A2623;
+  --color-acento-texto: #FF987F;
+ 
+  --color-exito-borde: #1E5750;
+  --color-advertencia-borde: #6B4036;
+ 
+  --color-error: #FF7A85;
+  --color-error-suave: #3A1F26;
+  --color-error-borde: #6B2F38;
+  --color-error-texto: #FF8F98;
+ 
+  --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --sombra-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --sombra-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
