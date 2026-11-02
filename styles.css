@@ -1,3 +1,21 @@
+/* Contenido: */
+/* 1. RESET Y ESTILOS GENERALES */
+/* 2. TEMA CLARO Y VARIABLES PREPARADAS PARA TEMA OSCURO */
+/* 3. TIPOGRAFÍA */
+/* 4. CONTENEDORES Y UTILIDADES GENERALES */
+
+/* Pendiente: */
+
+/* 5. VARIABLES Y SISTEMA DE DISEÑO */
+/* 6. Botones */
+/* 7. Formularios /
+/* 8. Tarjetas y paneles */
+/* 9. Avatares, etiquetas e indicadores */
+/* 10. Mensajes y estados */
+
+
+
+
 /* 1. RESET Y ESTILOS GENERALES */
 
 html {
@@ -128,6 +146,8 @@ hr {
 }
 
 /* 2. TEMA CLARO Y VARIABLES PREPARADAS PARA TEMA OSCURO */
+
+
 :root {
   color-scheme: light;
  
@@ -234,4 +254,104 @@ hr {
   --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
   --sombra-md: 0 4px 16px rgba(0, 0, 0, 0.35);
   --sombra-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* 3. TIPOGRAFÍA */
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--peso-semibold);
+  line-height: var(--interlineado-titulo);
+  color: var(--color-texto);
+  text-wrap: balance;
+}
+ 
+h1 { font-size: var(--texto-3xl); font-weight: var(--peso-medio); }
+h2 { font-size: var(--texto-2xl); font-weight: var(--peso-medio); letter-spacing: -0.01em; }
+h3 { font-size: var(--texto-lg); }
+h4 { font-size: var(--texto-md); }
+h5 { font-size: var(--texto-base); }
+h6 { font-size: var(--texto-sm); }
+ 
+/* El h1 del documento es el nombre de la marca dentro del encabezado */
+.marca-nombre {
+  font-size: var(--texto-base);
+  font-weight: var(--peso-negrita);
+  letter-spacing: 0;
+}
+ 
+.marca-eslogan {
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-secundario);
+}
+ 
+strong {
+  font-weight: var(--peso-semibold);
+}
+ 
+/* Listas de definición (resúmenes y habilidades) */
+dt {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-texto-secundario);
+}
+ 
+dd + dt {
+  margin-top: var(--espacio-2);
+}
+ 
+/* Texto secundario y metadatos */
+.zona-publica,
+.datos-basicos,
+.reputacion,
+.contador-me-gusta,
+.conversacion-ultimo {
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-secundario);
+}
+ 
+.conversacion-nombre {
+  font-weight: var(--peso-semibold);
+}
+ 
+/* Listas con viñetas de texto corrido */
+.desglose-afinidad,
+.instrucciones {
+  padding-left: var(--espacio-5);
+  list-style: disc;
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-secundario);
+}
+ 
+.desglose-afinidad li + li,
+.instrucciones li + li {
+  margin-top: var(--espacio-1);
+}
+ 
+ 
+/* 4. CONTENEDORES Y UTILIDADES GENERALES */
+
+
+.texto-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+ 
+/* Ritmo vertical dentro de pantallas y bloques */
+.pantalla > * + * {
+  margin-top: var(--flujo-pantalla);
+}
+ 
+.bloque > * + * {
+  margin-top: var(--flujo-componente);
 }
