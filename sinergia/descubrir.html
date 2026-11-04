@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configura tu búsqueda y encuentra compañeros con habilidades complementarias.">
+  <title>Descubrir compañeros | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html" aria-current="page">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--   SECCIÓN: DESCUBRIR COMPAÑEROS  -->
+      <section id="descubrir" class="pantalla pantalla-descubrir" aria-labelledby="titulo-descubrir">
+        <h1 id="titulo-descubrir">Descubrir compañeros</h1>
+        <p>Cuéntanos qué necesitas y qué puedes aportar para encontrar personas con habilidades complementarias.</p>
+
+        <section class="bloque" aria-labelledby="titulo-busqueda">
+          <h2 id="titulo-busqueda">Configurar búsqueda</h2>
+          <!-- Pendiente de backend: filtrado y cálculo de afinidad -->
+          <form class="formulario formulario-busqueda" method="get">
+            <fieldset>
+              <legend>Tu perfil de búsqueda</legend>
+
+              <label for="area">Área de estudio o trabajo</label>
+              <input type="text" id="area" name="area" required placeholder="Ejemplo: Ingeniería informática">
+
+              <label for="categoria">Categoría</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="programacion">Programación</option>
+                <option value="diseno">Diseño</option>
+                <option value="ciencias">Ciencias</option>
+                <option value="idiomas">Idiomas</option>
+                <option value="negocios">Negocios</option>
+                <option value="personalizada">Otra (personalizada)</option>
+              </select>
+
+              <label for="subcategoria">Subcategoría</label>
+              <select id="subcategoria" name="subcategoria" required>
+                <option value="">Selecciona una subcategoría</option>
+                <optgroup label="Programación">
+                  <option>Frontend</option>
+                  <option>Backend</option>
+                  <option>Full Stack</option>
+                  <option>HTML</option>
+                  <option>CSS</option>
+                  <option>JavaScript</option>
+                  <option>Python</option>
+                  <option>Bases de datos</option>
+                  <option>Desarrollo móvil</option>
+                </optgroup>
+                <optgroup label="Diseño">
+                  <option>Diseño gráfico</option>
+                  <option>UI/UX</option>
+                  <option>Diseño web</option>
+                  <option>Edición de imágenes</option>
+                  <option>Edición de video</option>
+                </optgroup>
+                <optgroup label="Ciencias">
+                  <option>Matemáticas</option>
+                  <option>Física</option>
+                  <option>Química</option>
+                  <option>Biología</option>
+                </optgroup>
+                <optgroup label="Idiomas">
+                  <option>Inglés</option>
+                  <option>Español</option>
+                  <option>Francés</option>
+                  <option>Otros idiomas</option>
+                </optgroup>
+                <optgroup label="Negocios">
+                  <option>Administración</option>
+                  <option>Contabilidad</option>
+                  <option>Marketing</option>
+                  <option>Finanzas</option>
+                  <option>Emprendimiento</option>
+                </optgroup>
+                <option value="personalizada">Otra (personalizada)</option>
+              </select>
+
+              <label for="categoria-personalizada">Categoría personalizada (opcional)</label>
+              <input type="text" id="categoria-personalizada" name="categoria_personalizada">
+
+              <label for="subcategoria-personalizada">Subcategoría personalizada (opcional)</label>
+              <input type="text" id="subcategoria-personalizada" name="subcategoria_personalizada">
+
+              <label for="habilidad-necesita">Habilidad en la que necesitas ayuda</label>
+              <input type="text" id="habilidad-necesita" name="habilidad_necesita" required placeholder="Ejemplo: Frontend">
+
+              <label for="habilidad-aporta">Habilidades que puedes aportar</label>
+              <input type="text" id="habilidad-aporta" name="habilidad_aporta" required placeholder="Ejemplo: Backend, bases de datos">
+
+              <label for="tipo-colaboracion">Tipo de colaboración</label>
+              <select id="tipo-colaboracion" name="tipo_colaboracion" required>
+                <option value="">Selecciona un tipo</option>
+                <option>Trabajo de colegio</option>
+                <option>Proyecto universitario</option>
+                <option>Desarrollo de página web</option>
+                <option>Desarrollo de aplicación</option>
+                <option>Proyecto personal</option>
+                <option>Emprendimiento</option>
+                <option>Colaboración profesional</option>
+              </select>
+
+              <label for="objetivos">Objetivos</label>
+              <textarea id="objetivos" name="objetivos" rows="4" placeholder="Describe qué quieres lograr con esta colaboración"></textarea>
+            </fieldset>
+
+            <fieldset>
+              <legend>Disponibilidad</legend>
+              <input type="checkbox" id="disp-manana" name="disponibilidad" value="manana">
+              <label for="disp-manana">Mañanas</label>
+              <input type="checkbox" id="disp-tarde" name="disponibilidad" value="tarde">
+              <label for="disp-tarde">Tardes</label>
+              <input type="checkbox" id="disp-noche" name="disponibilidad" value="noche">
+              <label for="disp-noche">Noches</label>
+              <input type="checkbox" id="disp-fines" name="disponibilidad" value="fines-de-semana">
+              <label for="disp-fines">Fines de semana</label>
+            </fieldset>
+
+            <button type="submit" class="boton boton-principal">Buscar compañeros</button>
+          </form>
+        </section>
+
+        <section id="candidatos" class="bloque" aria-labelledby="titulo-candidatos">
+          <h2 id="titulo-candidatos">Candidatos sugeridos</h2>
+          <!-- Pendiente de lógica de aplicación: ambos usuarios con emparejamiento activo, menores solo con menores,
+               adultos solo con adultos y diferencia máxima de edad de tres años. El MATCH ocurre solo con interés mutuo. -->
+          <article class="tarjeta tarjeta-candidato">
+            <img src="img/perfiles/laura-campos.jpg" alt="Fotografía de perfil de Laura Campos" class="foto-perfil foto-mediana">
+            <h3>Laura Campos</h3>
+            <p class="datos-basicos">22 años. Estudiante de diseño web en la Universidad de ejemplo.</p>
+            <p>Disfruta construir interfaces claras y busca a alguien que lleve la lógica del servidor.</p>
+
+            <dl class="habilidades-candidato">
+              <dt>Habilidades dominadas</dt>
+              <dd>Frontend, HTML, CSS</dd>
+              <dt>Habilidades intermedias</dt>
+              <dd>Backend, JavaScript</dd>
+              <dt>Habilidades que necesita</dt>
+              <dd>Bases de datos</dd>
+            </dl>
+
+            <div class="afinidad">
+              <p><strong>Afinidad:</strong> 92%</p>
+              <meter min="0" max="100" value="92">92%</meter>
+              <ul class="desglose-afinidad">
+                <li>Tú dominas Backend y ella necesita apoyo en esa área.</li>
+                <li>Ella domina Frontend y tú necesitas ayuda con esa habilidad.</li>
+                <li>Ella tiene conocimientos de Backend, lo que facilita la comunicación técnica.</li>
+              </ul>
+            </div>
+
+            <p class="reputacion">Reputación: 4,6 de 5 estrellas. Colaboraciones realizadas: 7.</p>
+
+            <div class="acciones-tarjeta">
+              <button type="button" class="boton boton-principal">Mostrar interés</button>
+              <button type="button" class="boton">Descartar</button>
+              <a href="perfil.html" class="boton">Ver perfil completo</a>
+            </div>
+          </article>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

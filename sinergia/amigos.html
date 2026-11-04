@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de amigos y solicitudes de amistad recibidas y enviadas.">
+  <title>Amigos | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html" aria-current="page">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--  SECCIÓN: AMISTADES  -->
+      <section id="amigos" class="pantalla pantalla-amigos" aria-labelledby="titulo-amigos">
+        <h1 id="titulo-amigos">Amigos</h1>
+        <p>Las amistades son independientes de los matches de colaboración.</p>
+
+        <section class="bloque" aria-labelledby="amigos-lista">
+          <h2 id="amigos-lista">Lista de amigos</h2>
+          <ul class="lista-personas">
+            <li class="persona">
+              <img src="img/perfiles/andrea-solis.jpg" alt="Fotografía de perfil de Andrea Solís" class="foto-perfil foto-pequena">
+              <p>Andrea Solís</p>
+              <a href="perfil.html" aria-label="Ver perfil de Andrea Solís">Ver perfil</a>
+            </li>
+            <li class="persona">
+              <img src="img/perfiles/luis-vargas.jpg" alt="Fotografía de perfil de Luis Vargas" class="foto-perfil foto-pequena">
+              <p>Luis Vargas</p>
+              <a href="perfil.html" aria-label="Ver perfil de Luis Vargas">Ver perfil</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bloque" aria-labelledby="amigos-recibidas">
+          <h2 id="amigos-recibidas">Solicitudes recibidas</h2>
+          <ul class="lista-personas">
+            <li class="persona">
+              <img src="img/perfiles/camila-jimenez.jpg" alt="Fotografía de perfil de Camila Jiménez" class="foto-perfil foto-pequena">
+              <p>Camila Jiménez</p>
+              <a href="perfil.html" aria-label="Ver perfil de Camila Jiménez">Ver perfil</a>
+              <button type="button" class="boton boton-principal" aria-label="Aceptar solicitud de Camila Jiménez">Aceptar</button>
+              <button type="button" class="boton" aria-label="Rechazar solicitud de Camila Jiménez">Rechazar</button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bloque" aria-labelledby="amigos-enviadas">
+          <h2 id="amigos-enviadas">Solicitudes enviadas</h2>
+          <ul class="lista-personas">
+            <li class="persona">
+              <img src="img/perfiles/mateo-araya.jpg" alt="Fotografía de perfil de Mateo Araya" class="foto-perfil foto-pequena">
+              <p>Mateo Araya</p>
+              <a href="perfil.html" aria-label="Ver perfil de Mateo Araya">Ver perfil</a>
+              <button type="button" class="boton" aria-label="Cancelar solicitud enviada a Mateo Araya">Cancelar solicitud</button>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

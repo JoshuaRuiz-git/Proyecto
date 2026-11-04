@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crea tu cuenta, inicia sesión o recupera tu contraseña.">
+  <title>Acceso | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="index.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+      <a href="acceso.html#inicio-sesion" aria-current="page" class="enlace-acceso">Iniciar sesión</a>
+      <a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN: NAVEGACIÓN PÚBLICA -->
+  <nav class="navegacion-publica" id="navegacion-publica" aria-label="Navegación pública">
+    <ul class="menu-publico">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="acerca-de.html">Acerca de</a></li>
+    </ul>
+  </nav>
+
+  <!--  SECCIÓN: MAIN  -->
+  <main class="contenido-principal" id="contenido-principal">
+
+    <!--  SECCIÓN: REGISTRO E INICIO DE SESIÓN  -->
+    <section id="acceso" class="pantalla pantalla-acceso" aria-labelledby="titulo-acceso">
+      <h1 id="titulo-acceso">Acceso</h1>
+      <p>Puedes explorar una vista previa sin iniciar sesión. Para publicar, comentar, enviar solicitudes, emparejarte o conversar necesitas una cuenta.</p>
+
+      <section id="registro" class="bloque" aria-labelledby="titulo-registro">
+        <h2 id="titulo-registro">Crear cuenta</h2>
+        <!-- Pendiente de backend: registro real (falta definir action del servidor) -->
+        <form class="formulario formulario-registro" id="formulario-registro" method="post" aria-labelledby="titulo-registro">
+          <fieldset>
+            <legend>Datos de registro</legend>
+
+            <label for="registro-nombre">Nombre completo</label>
+            <input type="text" id="registro-nombre" name="nombre" required autocomplete="name">
+
+            <label for="registro-nacimiento">Fecha de nacimiento (se mantiene privada)</label>
+            <input type="date" id="registro-nacimiento" name="nacimiento" required autocomplete="bday">
+
+            <label for="registro-correo">Correo electrónico</label>
+            <input type="email" id="registro-correo" name="correo" required autocomplete="email">
+
+            <label for="registro-contrasena">Contraseña</label>
+            <input type="password" id="registro-contrasena" name="contrasena" required minlength="8" autocomplete="new-password">
+
+            <label for="registro-confirmacion">Confirmar contraseña</label>
+            <input type="password" id="registro-confirmacion" name="confirmacion" required minlength="8" autocomplete="new-password">
+
+            <input type="checkbox" id="registro-terminos" name="terminos" required>
+            <label for="registro-terminos">Acepto los <a href="terminos.html">términos y condiciones</a></label>
+          </fieldset>
+          <button type="submit" class="boton boton-principal">Crear cuenta</button>
+        </form>
+      </section>
+
+      <section id="inicio-sesion" class="bloque" aria-labelledby="titulo-inicio-sesion">
+        <h2 id="titulo-inicio-sesion">Iniciar sesión</h2>
+        <!-- Pendiente de backend: autenticación real (falta definir action del servidor) -->
+        <form class="formulario formulario-sesion" id="formulario-inicio-sesion" method="post" aria-labelledby="titulo-inicio-sesion">
+          <fieldset>
+            <legend>Datos de acceso</legend>
+
+            <label for="sesion-correo">Correo electrónico</label>
+            <input type="email" id="sesion-correo" name="correo" required autocomplete="username">
+
+            <label for="sesion-contrasena">Contraseña</label>
+            <input type="password" id="sesion-contrasena" name="contrasena" required autocomplete="current-password">
+
+            <input type="checkbox" id="sesion-recordar" name="recordar">
+            <label for="sesion-recordar">Recordar sesión</label>
+          </fieldset>
+          <button type="submit" class="boton boton-principal">Acceder</button>
+          <a href="#recuperacion">Recuperar contraseña</a>
+        </form>
+      </section>
+
+      <section id="recuperacion" class="bloque" aria-labelledby="titulo-recuperacion">
+        <h2 id="titulo-recuperacion">Recuperar contraseña</h2>
+        <!-- Pendiente de backend: envío real del correo de recuperación (falta definir action del servidor) -->
+        <form class="formulario formulario-recuperacion" id="formulario-recuperacion" method="post" aria-labelledby="titulo-recuperacion">
+          <label for="recuperacion-correo">Correo electrónico</label>
+          <input type="email" id="recuperacion-correo" name="correo" required autocomplete="email">
+          <button type="submit" class="boton">Solicitar recuperación</button>
+        </form>
+      </section>
+    </section>
+
+  </main>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

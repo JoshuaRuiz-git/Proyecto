@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administra tu perfil, privacidad, ubicación, notificaciones y cuenta.">
+  <title>Configuración | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html" aria-current="page">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--   SECCIÓN: CONFIGURACIÓN   -->
+      <section id="configuracion" class="pantalla pantalla-configuracion" aria-labelledby="titulo-configuracion">
+        <h1 id="titulo-configuracion">Configuración</h1>
+
+        <section class="bloque" aria-labelledby="config-perfil">
+          <h2 id="config-perfil">Editar perfil</h2>
+          <p>Actualiza tu fotografía, descripción, institución y actividad profesional.</p>
+          <a href="perfil.html" class="boton">Ir a mi perfil</a>
+        </section>
+
+        <section class="bloque" aria-labelledby="config-contrasena">
+          <h2 id="config-contrasena">Cambiar contraseña</h2>
+          <form class="formulario formulario-contrasena" method="post">
+            <label for="contrasena-actual">Contraseña actual</label>
+            <input type="password" id="contrasena-actual" name="contrasena_actual" required autocomplete="current-password">
+            <label for="contrasena-nueva">Nueva contraseña</label>
+            <input type="password" id="contrasena-nueva" name="contrasena_nueva" required minlength="8" autocomplete="new-password">
+            <label for="contrasena-confirmar">Confirmar nueva contraseña</label>
+            <input type="password" id="contrasena-confirmar" name="contrasena_confirmar" required minlength="8" autocomplete="new-password">
+            <button type="submit" class="boton">Cambiar contraseña</button>
+          </form>
+        </section>
+
+        <section class="bloque" aria-labelledby="config-preferencias">
+          <h2 id="config-preferencias">Preferencias</h2>
+          <form class="formulario formulario-preferencias" method="post">
+            <fieldset id="config-privacidad">
+              <legend>Privacidad</legend>
+              <input type="checkbox" id="priv-perfil" name="perfil_visible" checked>
+              <label for="priv-perfil">Mostrar mi perfil a otros usuarios</label>
+              <input type="checkbox" id="priv-historias" name="historias_amigos" checked>
+              <label for="priv-historias">Mostrar mis historias solo a amigos</label>
+            </fieldset>
+
+            <fieldset id="config-ubicacion">
+              <legend>Ubicación</legend>
+              <label for="ubicacion-modo">Modo de ubicación</label>
+              <select id="ubicacion-modo" name="ubicacion_modo">
+                <option value="aproximada">Ubicación aproximada del dispositivo</option>
+                <option value="manual">Zona o institución manual</option>
+                <option value="desactivada">Desactivada</option>
+              </select>
+            </fieldset>
+
+            <fieldset id="config-notificaciones">
+              <legend>Notificaciones</legend>
+              <input type="checkbox" id="notif-solicitudes" name="notif_solicitudes" checked>
+              <label for="notif-solicitudes">Solicitudes de amistad</label>
+              <input type="checkbox" id="notif-matches" name="notif_matches" checked>
+              <label for="notif-matches">Matches</label>
+              <input type="checkbox" id="notif-mensajes" name="notif_mensajes" checked>
+              <label for="notif-mensajes">Mensajes</label>
+            </fieldset>
+
+            <fieldset id="config-tema">
+              <legend>Tema visual</legend>
+              <label for="tema-seleccion">Tema</label>
+              <select id="tema-seleccion" name="tema">
+                <option value="claro">Claro</option>
+                <option value="oscuro">Oscuro</option>
+              </select>
+            </fieldset>
+
+            <button type="submit" class="boton boton-principal">Guardar preferencias</button>
+          </form>
+        </section>
+
+        <section class="bloque" aria-labelledby="config-bloqueados">
+          <h2 id="config-bloqueados">Usuarios bloqueados</h2>
+          <p>No has bloqueado a ningún usuario.</p>
+        </section>
+
+        <section class="bloque" aria-labelledby="config-reportar">
+          <h2 id="config-reportar">Reportar usuarios</h2>
+          <form class="formulario formulario-reporte" method="post">
+            <label for="reporte-usuario">Nombre del usuario</label>
+            <input type="text" id="reporte-usuario" name="usuario" required>
+            <label for="reporte-motivo">Motivo</label>
+            <select id="reporte-motivo" name="motivo" required>
+              <option value="">Selecciona un motivo</option>
+              <option>Contenido inapropiado</option>
+              <option>Acoso</option>
+              <option>Suplantación de identidad</option>
+              <option>Otro</option>
+            </select>
+            <label for="reporte-detalle">Detalles (opcional)</label>
+            <textarea id="reporte-detalle" name="detalle" rows="3"></textarea>
+            <button type="submit" class="boton">Enviar reporte</button>
+          </form>
+        </section>
+
+        <section class="bloque" aria-labelledby="config-sesion">
+          <h2 id="config-sesion">Cerrar sesión</h2>
+          <!-- Pendiente de backend: cierre de sesión real. Control deshabilitado hasta que exista autenticación -->
+          <button type="button" class="boton" disabled aria-describedby="cerrar-sesion-pendiente">Cerrar sesión</button>
+          <p id="cerrar-sesion-pendiente">Función pendiente: estará disponible cuando exista autenticación.</p>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

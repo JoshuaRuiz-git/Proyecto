@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encuentra personas con habilidades complementarias y empieza tu próximo proyecto.">
+  <title>Inicio | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html" aria-current="page">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--  SECCIÓN: INICIO -->
+      <section id="inicio" class="pantalla pantalla-inicio" aria-labelledby="titulo-inicio">
+        <h1 id="titulo-inicio">Bienvenido, Daniel</h1>
+        <p>Encuentra personas con habilidades complementarias y empieza tu próximo proyecto.</p>
+
+        <aside class="panel-complementario panel-usuario" aria-label="Resumen del usuario">
+          <h2>Resumen de tu cuenta</h2>
+          <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
+          <p><strong>Daniel Rodríguez</strong></p>
+          <p>Estudiante de ingeniería informática</p>
+          <dl class="datos-resumen">
+            <dt>Amigos</dt><dd>2</dd>
+            <dt>Matches</dt><dd>2</dd>
+            <dt>Mensajes pendientes</dt><dd>2</dd>
+          </dl>
+          <div class="estado-emparejamiento">
+            <!-- Pendiente de JavaScript/backend: activar o desactivar el modo de emparejamiento -->
+            <input type="checkbox" id="modo-emparejamiento" name="modo_emparejamiento" role="switch" checked>
+            <label for="modo-emparejamiento">Modo de emparejamiento activado</label>
+          </div>
+          <a href="descubrir.html" class="boton boton-principal">Descubrir compañeros</a>
+        </aside>
+
+        <section id="historias-amigos" class="bloque bloque-historias" aria-labelledby="titulo-historias">
+          <h2 id="titulo-historias">Historias de amigos</h2>
+          <p>Solo tus amigos aceptados pueden ver estas historias.</p>
+          <!-- Pendiente de JavaScript/backend: visor individual de historias. Cada enlace apunta por ahora a su propia historia en esta lista -->
+          <ul class="lista-historias">
+            <li class="historia" id="historia-andrea-solis">
+              <figure>
+                <img src="img/historias/andrea-solis.jpg" alt="Historia de Andrea Solís: avance de su proyecto de diseño" class="foto-historia">
+                <figcaption>Andrea Solís</figcaption>
+              </figure>
+              <a href="#historia-andrea-solis" aria-label="Ver la historia de Andrea Solís">Ver historia</a>
+            </li>
+            <li class="historia" id="historia-luis-vargas">
+              <figure>
+                <img src="img/historias/luis-vargas.jpg" alt="Historia de Luis Vargas: su espacio de estudio" class="foto-historia">
+                <figcaption>Luis Vargas</figcaption>
+              </figure>
+              <a href="#historia-luis-vargas" aria-label="Ver la historia de Luis Vargas">Ver historia</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bloque bloque-recientes" aria-labelledby="titulo-recientes">
+          <h2 id="titulo-recientes">Publicaciones recientes</h2>
+          <ul class="lista-enlaces">
+            <li><a href="publicaciones.html#publicacion-1">Daniel Rodríguez busca alguien que domine frontend</a></li>
+            <li><a href="publicaciones.html#publicacion-2">María Fernández ofrece ayuda con álgebra</a></li>
+            <li><a href="publicaciones.html#publicacion-3">Sebastián Mora busca compañeros para una aplicación móvil</a></li>
+          </ul>
+        </section>
+
+        <section class="bloque bloque-recomendaciones" aria-labelledby="titulo-recomendaciones">
+          <h2 id="titulo-recomendaciones">Recomendaciones de personas</h2>
+          <ul class="lista-enlaces">
+            <li><a href="personas-cercanas.html">Valeria Chaves: Frontend y UI/UX</a></li>
+            <li><a href="personas-cercanas.html">Andrés Quesada: Python y bases de datos</a></li>
+          </ul>
+        </section>
+
+        <section class="bloque bloque-accesos" aria-labelledby="titulo-accesos">
+          <h2 id="titulo-accesos">Accesos rápidos</h2>
+          <ul class="lista-accesos">
+            <li><a href="mensajes.html" class="boton">Ir a mensajes</a></li>
+            <li><a href="matches.html" class="boton">Ir a matches</a></li>
+          </ul>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personas con interés mutuo y acceso a sus chats de trabajo.">
+  <title>Matches | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html" aria-current="page">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--  SECCIÓN: MATCHES  -->
+      <section id="matches" class="pantalla pantalla-matches" aria-labelledby="titulo-matches">
+        <h1 id="titulo-matches">Matches</h1>
+        <p>Un match ocurre solo cuando ambas personas muestran interés.</p>
+
+        <div class="rejilla-tarjetas">
+          <article class="tarjeta tarjeta-match">
+            <img src="img/perfiles/valeria-chaves.jpg" alt="Fotografía de perfil de Valeria Chaves" class="foto-perfil foto-mediana">
+            <h2>Valeria Chaves</h2>
+            <p>Match desde el <time datetime="2026-10-27">27 de octubre de 2026</time></p>
+            <p>Afinidad: 88%</p>
+            <p>Habilidades complementarias: tú aportas Backend y ella aporta Frontend y UI/UX.</p>
+            <p class="estado-colaboracion">Estado de colaboración: en curso</p>
+            <a href="chat-colaboracion.html" class="boton boton-principal" aria-label="Abrir chat de trabajo con Valeria Chaves">Abrir chat de trabajo</a>
+          </article>
+
+          <article class="tarjeta tarjeta-match">
+            <img src="img/perfiles/andres-quesada.jpg" alt="Fotografía de perfil de Andrés Quesada" class="foto-perfil foto-mediana">
+            <h2>Andrés Quesada</h2>
+            <p>Match desde el <time datetime="2026-10-25">25 de octubre de 2026</time></p>
+            <p>Afinidad: 79%</p>
+            <p>Habilidades complementarias: tú aportas Backend y él aporta Python y bases de datos.</p>
+            <p class="estado-colaboracion">Estado de colaboración: pendiente de inicio</p>
+            <a href="chat-colaboracion.html" class="boton boton-principal" aria-label="Abrir chat de trabajo con Andrés Quesada">Abrir chat de trabajo</a>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

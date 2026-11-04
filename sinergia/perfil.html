@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perfil de usuario con habilidades, reputación e historial de colaboraciones.">
+  <title>Mi perfil | Sinergia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <button type="button" class="boton boton-notificaciones">
+        Notificaciones <span class="insignia">3</span>
+      </button>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html" aria-current="page">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--  SECCIÓN: PERFIL  -->
+      <section id="perfil" class="pantalla pantalla-perfil" aria-labelledby="titulo-perfil">
+        <h1 id="titulo-perfil">Mi perfil</h1>
+
+        <article class="tarjeta perfil-cabecera">
+          <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-grande">
+          <h2>Daniel Rodríguez</h2>
+          <p class="distintivo-verificado"><a href="verificacion.html">Identidad verificada</a></p>
+          <p>Me gusta construir la parte lógica de las aplicaciones y busco compañeros para crear proyectos web.</p>
+          <p>Institución: Universidad de ejemplo (opcional)</p>
+          <p>Actividad profesional: Desarrollador independiente (opcional)</p>
+          <!-- Pendiente de implementación: edición del perfil -->
+          <button type="button" class="boton">Editar perfil</button>
+        </article>
+
+        <section class="bloque" aria-labelledby="perfil-publicaciones">
+          <h2 id="perfil-publicaciones">Publicaciones</h2>
+          <ul class="lista-enlaces">
+            <li><a href="publicaciones.html#publicacion-1">Busco alguien que domine frontend (30 de octubre de 2026)</a></li>
+          </ul>
+        </section>
+
+        <section class="bloque" aria-labelledby="perfil-estadisticas">
+          <h2 id="perfil-estadisticas">Estadísticas de habilidades</h2>
+
+          <section class="estadisticas estadisticas-declaradas">
+            <h3>Habilidades declaradas por el usuario</h3>
+            <ul class="lista-estadisticas">
+              <li><label for="stat-backend">Backend: 85%</label> <meter id="stat-backend" min="0" max="100" value="85">85%</meter></li>
+              <li><label for="stat-frontend">Frontend: 35%</label> <meter id="stat-frontend" min="0" max="100" value="35">35%</meter></li>
+              <li><label for="stat-bd">Bases de datos: 65%</label> <meter id="stat-bd" min="0" max="100" value="65">65%</meter></li>
+            </ul>
+          </section>
+
+          <section class="estadisticas estadisticas-respaldadas">
+            <h3>Habilidades respaldadas por evaluaciones</h3>
+            <p>Aún no hay habilidades respaldadas por evaluaciones de compañeros.</p>
+          </section>
+        </section>
+
+        <section class="bloque" aria-labelledby="perfil-reputacion">
+          <h2 id="perfil-reputacion">Reputación</h2>
+          <p>Sin colaboraciones evaluadas</p>
+        </section>
+
+        <section class="bloque" aria-labelledby="perfil-historial">
+          <h2 id="perfil-historial">Historial de colaboraciones</h2>
+          <p>Aún no hay colaboraciones finalizadas.</p>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
