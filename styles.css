@@ -1,4 +1,9 @@
 /* 
+<<<<<<< Updated upstream
+=======
+ETAPA 1 DE 7: ESTRUCTURA GENERAL DE LA INTERFAZ
+
+>>>>>>> Stashed changes
    Contenido:
    1. Variables y sistema de diseño
    2. Tema claro y variables del tema oscuro
@@ -923,4 +928,865 @@ meter::-moz-meter-bar {
  
 .mensajes-lista > * + * {
   margin-top: var(--espacio-3);
+}
+
+/* 
+   ETAPA 2 DE 7: ESTRUCTURA GENERAL DE LA INTERFAZ
+
+   Contenido:
+   11. Tokens de estructura
+   12. Marco de la página
+   13. Encabezado principal (público e interno)
+   14. Navegación pública
+   15. Navegación lateral interna
+   16. Contenido principal
+   17. Paneles complementarios
+   18. Pie de página 
+*/
+
+
+/* 11. TOKENS DE ESTRUCTURA */
+:root {
+  --gutter-publico: clamp(var(--espacio-4), 4vw, 3.75rem);
+  --margen-publico: max(var(--gutter-publico), calc((100% - var(--ancho-maximo)) / 2 + var(--gutter-publico)));
+  --margen-interno: var(--espacio-8);
+  --ancho-panel: 18rem;
+  --alto-barra: calc(var(--alto-encabezado) + var(--espacio-4));
+}
+
+
+/* 12. MARCO DE LA PÁGINA */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.diseno-principal,
+.contenido-principal {
+  flex: 1 0 auto;
+}
+
+
+/* 13. ENCABEZADO PRINCIPAL */
+.encabezado-principal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-3) var(--espacio-6);
+  min-height: var(--alto-barra);
+  padding: var(--espacio-3) var(--margen-publico);
+  border-bottom: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+}
+
+.marca-nombre a {
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.marca-nombre a:hover {
+  color: var(--color-primario-texto);
+}
+
+.encabezado-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-2);
+}
+
+.encabezado-acciones .boton,
+.enlace-acceso,
+.enlace-perfil {
+  min-height: var(--alto-control);
+}
+
+/* Enlaces de acceso y perfil con apariencia de botón */
+.enlace-acceso,
+.enlace-perfil {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--espacio-4);
+  border-radius: var(--radio-md);
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+  font-weight: var(--peso-semibold);
+  text-decoration: none;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.enlace-acceso:hover,
+.enlace-perfil:hover {
+  background-color: var(--color-primario-borde);
+  color: var(--color-primario-hover);
+}
+
+.enlace-acceso[aria-current="page"],
+.enlace-perfil[aria-current="page"] {
+  background-color: var(--color-primario-borde);
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  flex: 1 1 18rem;
+  align-items: center;
+  gap: var(--espacio-2);
+  min-width: 0;
+  max-width: 30rem;
+}
+
+.buscador input[type="search"] {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.buscador .boton {
+  min-height: var(--alto-control);
+}
+
+@media (min-width: 48rem) {
+  .encabezado-principal:has(.buscador) {
+    display: grid;
+    grid-template-columns: var(--ancho-barra-lateral) minmax(0, 1fr) auto;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+  }
+
+  .encabezado-principal:has(.buscador) > .marca {
+    justify-content: center;
+    padding: var(--espacio-3) var(--espacio-5);
+    border-right: 1px solid var(--color-borde);
+  }
+
+  .encabezado-principal:has(.buscador) > .buscador {
+    align-self: center;
+    margin-inline: var(--margen-interno) var(--espacio-4);
+  }
+
+  .encabezado-principal:has(.buscador) > .encabezado-acciones {
+    align-self: center;
+    padding-inline-end: var(--margen-interno);
+  }
+}
+
+
+/* 14. NAVEGACIÓN PÚBLICA */
+.navegacion-publica {
+  padding-inline: var(--margen-publico);
+  border-bottom: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
+}
+
+.menu-publico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--espacio-6);
+}
+
+.menu-publico a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  color: var(--color-texto-secundario);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: color var(--transicion-rapida), border-color var(--transicion-rapida);
+}
+
+.menu-publico a:hover {
+  color: var(--color-texto);
+}
+
+.menu-publico a[aria-current="page"] {
+  border-bottom-color: var(--color-primario);
+  color: var(--color-primario-texto);
+  font-weight: var(--peso-semibold);
+}
+
+
+/* 15. NAVEGACIÓN LATERAL INTERNA */
+.barra-lateral {
+  padding: var(--espacio-4) var(--espacio-3);
+  border-bottom: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
+}
+
+.menu-lateral {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1);
+}
+
+.menu-lateral a {
+  display: flex;
+  align-items: center;
+  min-height: var(--alto-control);
+  padding: var(--espacio-2) var(--espacio-3);
+  border-radius: var(--radio-md);
+  color: var(--color-texto-secundario);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.menu-lateral a:hover {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.menu-lateral a[aria-current="page"] {
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+  font-weight: var(--peso-semibold);
+}
+
+@media (min-width: 48rem) {
+  .diseno-principal {
+    display: grid;
+    grid-template-columns: var(--ancho-barra-lateral) minmax(0, 1fr);
+  }
+
+  .barra-lateral {
+    border-bottom: 0;
+    border-right: 1px solid var(--color-borde);
+  }
+
+  .menu-lateral {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+
+/* 16. CONTENIDO PRINCIPAL */
+.contenido-principal {
+  min-width: 0;
+  padding: var(--espacio-6) var(--espacio-4) var(--espacio-10);
+}
+
+.navegacion-publica ~ .contenido-principal {
+  padding: var(--espacio-10) var(--margen-publico);
+}
+
+@media (min-width: 48rem) {
+  .diseno-principal > .contenido-principal {
+    padding: var(--espacio-8) max(var(--margen-interno), calc((100% - var(--ancho-contenido)) / 2)) var(--espacio-10);
+  }
+}
+
+/* Cada pantalla contiene sus flotados */
+.pantalla {
+  display: flow-root;
+}
+
+/* Introducción bajo el título de la página */
+.pantalla > h1 + p:not(.aviso-acceso, .aviso-privacidad) {
+  margin-top: var(--espacio-2);
+  color: var(--color-texto-secundario);
+}
+
+
+/* 17. PANELES COMPLEMENTARIOS */
+.panel-complementario > :is(h2, h3) {
+  font-size: var(--texto-md);
+}
+
+.datos-resumen {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--espacio-1) var(--espacio-3);
+}
+
+.datos-resumen dt,
+.datos-resumen dd {
+  margin: 0;
+}
+
+.datos-resumen dd {
+  font-weight: var(--peso-semibold);
+}
+
+@media (min-width: 64rem) {
+  .pantalla > .panel-complementario {
+    float: right;
+    width: var(--ancho-panel);
+    margin-inline-start: var(--espacio-6);
+  }
+
+  @supports selector(:has(a)) {
+    .pantalla:has(> .panel-complementario) > :not(.panel-complementario) {
+      margin-inline-end: calc(var(--ancho-panel) + var(--espacio-6));
+    }
+  }
+}
+
+
+/* 18. PIE DE PÁGINA */
+.pie-pagina {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-2) var(--espacio-6);
+  padding: var(--espacio-5) var(--margen-publico);
+  border-top: 1px solid var(--color-borde);
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+}
+
+.pie-pagina > p {
+  margin: 0;
+}
+
+.pie-pagina > p:not(.pie-nombre) {
+  flex: 1 1 20rem;
+}
+
+.pie-nombre {
+  color: var(--color-texto);
+}
+
+.pie-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1) var(--espacio-5);
+}
+
+.pie-enlaces a {
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+}
+
+.pie-enlaces a:hover {
+  color: var(--color-primario-texto);
+  text-decoration: underline;
+}
+
+.diseno-principal ~ .pie-pagina {
+  padding-inline: var(--espacio-4);
+}
+
+@media (min-width: 48rem) {
+  .diseno-principal ~ .pie-pagina {
+    padding-inline: calc(var(--ancho-barra-lateral) + var(--margen-interno)) var(--margen-interno);
+  }
+}
+
+/*
+   ETAPA 3 DE 7: COMUNIDAD Y PUBLICACIONES
+
+   Contenido:
+   19. Tokens de comunidad
+   20. Inicio: distribución y panel de usuario
+   21. Inicio: bloques, listas y accesos rápidos
+   22. Historias
+   23. Publicaciones: página, estado vacío y tarjeta
+   24. Publicaciones: contenido, categoría y pie
+   25. Comentarios
+   26. Crear publicación
+*/
+
+
+/* 19. TOKENS DE COMUNIDAD */
+:root {
+  --ancho-feed: 48rem;         /* ancho máximo de la columna de publicaciones */
+  --ancho-formulario: 44rem;   /* ancho máximo del formulario de creación */
+  --ancho-historia: 5.5rem;    /* ancho de cada historia en la fila */
+}
+
+
+/* 20. INICIO: DISTRIBUCIÓN Y PANEL DE USUARIO */
+
+/* Panel de usuario: avatar junto al nombre */
+.panel-usuario {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--espacio-3);
+  align-items: center;
+}
+
+.panel-usuario > :is(h2, .datos-resumen, .estado-emparejamiento, .boton) {
+  grid-column: 1 / -1;
+}
+
+.panel-usuario > .foto-perfil {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.panel-usuario > p {
+  grid-column: 2;
+  margin-top: 0;
+  min-width: 0;
+}
+
+.panel-usuario > .foto-perfil + p {
+  align-self: end;
+  margin-top: var(--flujo-componente);
+}
+
+.panel-usuario > p + p {
+  align-self: start;
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+}
+
+.panel-usuario .datos-resumen {
+  gap: var(--espacio-2) var(--espacio-3);
+  padding: var(--espacio-3) var(--espacio-4);
+  border: 1px solid var(--color-primario-borde);
+  border-radius: var(--radio-md);
+  background-color: var(--color-superficie);
+}
+
+.panel-usuario .datos-resumen dt {
+  margin-top: 0;
+  font-weight: var(--peso-medio);
+}
+
+.panel-usuario .datos-resumen dd {
+  color: var(--color-primario-texto);
+}
+
+/* Interruptor a la derecha de su etiqueta */
+.panel-usuario .estado-emparejamiento {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  font-size: var(--texto-base);
+}
+
+.panel-usuario .estado-emparejamiento label {
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+
+/* Escritorio: el panel ocupa una columna lateral junto a los bloques. */
+@media (min-width: 64rem) {
+  .pantalla-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--ancho-panel);
+    column-gap: var(--espacio-6);
+    align-items: start;
+  }
+
+  .pantalla-inicio > h1,
+  .pantalla-inicio > h1 + p {
+    grid-column: 1 / -1;
+  }
+
+  .pantalla-inicio > .bloque {
+    grid-column: 1;
+  }
+
+  .pantalla-inicio > .panel-usuario {
+    float: none;
+    width: auto;
+    margin-inline-start: 0;
+    grid-column: 2;
+    grid-row: 3 / span 4;   /* cuatro bloques: historias, recientes, recomendaciones y accesos */
+  }
+
+  .pantalla.pantalla-inicio > :not(.panel-usuario) {
+    margin-inline-end: 0;
+  }
+}
+
+
+/* 21. INICIO: BLOQUES, LISTAS Y ACCESOS RÁPIDOS */
+.pantalla-inicio > .bloque > h2 {
+  font-size: var(--texto-md);
+}
+
+.pantalla-inicio > .bloque > h2 + p {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+}
+
+/* Listas de enlaces: filas separadas con flecha */
+.pantalla-inicio .lista-enlaces {
+  margin-inline: calc(var(--espacio-2) * -1);
+  margin-bottom: calc(var(--espacio-2) * -1);
+}
+
+.pantalla-inicio .lista-enlaces li + li {
+  border-top: 1px solid var(--color-borde);
+}
+
+.pantalla-inicio .lista-enlaces a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-3);
+  padding: var(--espacio-3) var(--espacio-2);
+  border-radius: var(--radio-md);
+  color: var(--color-texto);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.pantalla-inicio .lista-enlaces a::after {
+  content: "→";
+  content: "→" / "";
+  flex: none;
+  color: var(--color-texto-tenue);
+  transition: transform var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.pantalla-inicio .lista-enlaces a:hover {
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+}
+
+.pantalla-inicio .lista-enlaces a:hover::after {
+  color: currentColor;
+  transform: translateX(0.125rem);
+}
+
+/* Accesos rápidos */
+.pantalla-inicio .lista-accesos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-3);
+}
+
+
+/* 22. HISTORIAS */
+/* Fila de historias */
+.lista-historias {
+  display: flex;
+  gap: var(--espacio-4);
+  padding-block: var(--espacio-1);
+  overflow-x: auto;
+}
+
+.historia {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-1);
+  width: var(--ancho-historia);
+  text-align: center;
+}
+
+.historia figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-1);
+  max-width: 100%;
+}
+
+.lista-historias .foto-historia {
+  width: 3.5rem;
+  height: 3.5rem;
+  transition: transform var(--transicion-base);
+}
+
+.historia:hover .foto-historia,
+.historia:focus-within .foto-historia {
+  transform: scale(1.06);
+}
+
+.historia figcaption {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--color-texto);
+  font-weight: var(--peso-medio);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.historia a {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+}
+
+.historia a:hover {
+  text-decoration: underline;
+}
+
+
+/* 23. PUBLICACIONES: PÁGINA, ESTADO VACÍO Y TARJETA */
+.pantalla-publicaciones > .bloque {
+  max-width: var(--ancho-feed);
+}
+
+.pantalla-publicaciones > .bloque > h2 + p {
+  color: var(--color-texto-secundario);
+}
+
+/* Estado vacío (sección sin publicaciones): misma zona punteada de .vista-previa */
+.pantalla-publicaciones > .bloque > h2 + p:last-child {
+  padding: var(--espacio-5) var(--espacio-4);
+  border: 1px dashed var(--color-borde-fuerte);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-superficie-alt);
+  text-align: center;
+}
+
+/* Feed de tarjetas */
+.publicacion {
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transicion-base), box-shadow var(--transicion-base);
+}
+
+.publicacion + .publicacion {
+  margin-top: var(--espacio-4);
+}
+
+/* Publicación enlazada desde "Publicaciones recientes" */
+.publicacion:target {
+  border-color: var(--color-primario);
+  box-shadow: var(--anillo-foco);
+}
+
+/* Encabezado: avatar, autor y fecha; el enlace al perfil queda a la derecha */
+.publicacion-cabecera {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: var(--espacio-3);
+  align-items: center;
+}
+
+.publicacion-cabecera > .foto-perfil {
+  grid-row: 1 / span 2;
+}
+
+.publicacion-cabecera > :is(h3, p) {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.publicacion-cabecera > h3 {
+  align-self: end;
+  font-size: var(--texto-base);
+}
+
+.publicacion-cabecera > p {
+  align-self: start;
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-secundario);
+}
+
+.publicacion-cabecera > a {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  padding: var(--espacio-1) var(--espacio-2);
+  border-radius: var(--radio-sm);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+  text-align: right;
+  text-decoration: none;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.publicacion-cabecera > a:hover {
+  background-color: var(--color-primario-suave);
+}
+
+
+/* 24. PUBLICACIONES: CONTENIDO, CATEGORÍA Y PIE */
+.publicacion-contenido {
+  font-size: var(--texto-base);
+  line-height: 1.6;
+  color: var(--color-texto);
+  text-wrap: pretty;
+}
+
+/* La etiqueta .publicacion-categoria viene de la sección 9; aquí solo se alinea */
+.publicacion .publicacion-categoria {
+  align-self: flex-start;
+}
+
+/* Pie: botón de Me gusta seguido de su contador */
+.publicacion-pie {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--espacio-3);
+}
+
+.publicacion-pie .boton-me-gusta {
+  padding-inline: var(--espacio-3);
+  border-color: var(--color-borde);
+  font-size: var(--texto-sm);
+}
+
+.publicacion-pie .boton-me-gusta:hover {
+  border-color: var(--color-primario-borde);
+}
+
+.boton-me-gusta[aria-pressed="true"] {
+  border-color: var(--color-primario-borde);
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+}
+
+
+/* 25. COMENTARIOS */
+.publicacion .comentarios {
+  margin-top: var(--espacio-4);
+}
+
+.comentarios > * + * {
+  margin-top: var(--flujo-componente);
+}
+
+.comentarios h4 {
+  font-size: var(--texto-sm);
+}
+
+.comentarios > p {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+}
+
+/* Formulario de comentario */
+.formulario-comentario {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--espacio-1) var(--espacio-2);
+  align-items: center;
+}
+
+.formulario-comentario label {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.formulario-comentario input[type="text"] {
+  grid-column: 1;
+  margin-top: 0;
+}
+
+.formulario-comentario .boton {
+  grid-column: 2;
+  min-height: var(--alto-control);
+  margin: 0;
+}
+
+
+/* 26. CREAR PUBLICACIÓN */
+/* El formulario completo es una tarjeta */
+.formulario-publicacion {
+  max-width: var(--ancho-formulario);
+  padding: var(--espacio-6);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-tarjeta);
+  box-shadow: var(--sombra-sm);
+}
+
+.formulario-publicacion fieldset {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: var(--espacio-4);
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.formulario-publicacion fieldset > * {
+  grid-column: 1 / -1;
+}
+
+/* La leyenda actúa como título de la tarjeta */
+.formulario-publicacion legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  font-size: var(--texto-md);
+}
+
+.formulario-publicacion legend + label {
+  margin-top: var(--espacio-3);
+}
+
+/* Marca de campo obligatorio, derivada del atributo required del HTML */
+.formulario-publicacion label:has(+ :required)::after {
+  content: " *";
+  color: var(--color-acento-texto);
+}
+
+.formulario-publicacion textarea {
+  min-height: 9rem;
+  line-height: 1.55;
+}
+
+/* Selectores con flecha propia */
+.formulario-publicacion select {
+  appearance: none;
+  padding-inline-end: var(--espacio-8);
+  background-image: conic-gradient(from -45deg at 50% 100%, currentColor 90deg, transparent 0);
+  background-position: calc(100% - var(--espacio-4)) 50%;
+  background-size: 0.6rem 0.3rem;
+  background-repeat: no-repeat;
+  color: var(--color-texto);
+  cursor: pointer;
+}
+
+/* Área destinada a la imagen */
+.formulario-publicacion input[type="file"] {
+  width: 100%;
+  padding: var(--espacio-4);
+  border: 1px dashed var(--color-borde-fuerte);
+  border-radius: var(--radio-lg);
+  background-color: var(--color-superficie-alt);
+  transition: border-color var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.formulario-publicacion input[type="file"]:hover {
+  border-color: var(--color-primario);
+  background-color: var(--color-primario-suave);
+}
+
+.formulario-publicacion input[type="file"]:focus-visible {
+  border-color: var(--color-foco);
+  box-shadow: var(--anillo-foco);
+}
+
+.formulario-publicacion input[type="file"]::file-selector-button:hover {
+  border-color: var(--color-primario);
+  background-color: var(--color-primario-suave);
+}
+
+.formulario-publicacion > .boton-principal {
+  min-height: var(--alto-control);
+  margin-top: var(--espacio-6);
+  padding-inline: var(--espacio-6);
+}
+
+/* Escritorio: categoría y tipo de publicación comparten fila */
+@media (min-width: 48rem) {
+  .formulario-publicacion fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+  }
+
+  .formulario-publicacion fieldset > :is([for="publicar-tipo"], #publicar-tipo) {
+    grid-column: 2;
+  }
+
+  .formulario-publicacion fieldset > :is([for="publicar-categoria"], #publicar-categoria) {
+    grid-column: 1;
+  }
 }
