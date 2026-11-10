@@ -1,3 +1,4 @@
+Inicio · HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,20 +9,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+ 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
       <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
-
+ 
     <form class="buscador" role="search" method="get">
       <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
       <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
       <button type="submit" class="boton boton-buscar">Buscar</button>
     </form>
-
+ 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
       <button type="button" class="boton boton-notificaciones">
@@ -32,9 +33,9 @@
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
     </div>
   </header>
-
+ 
   <div class="diseno-principal">
-
+ 
     <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
     <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
       <ul class="menu-lateral">
@@ -51,15 +52,15 @@
         <li><a href="configuracion.html">Configuración</a></li>
       </ul>
     </nav>
-
+ 
     <!--  SECCIÓN: MAIN  -->
     <main class="contenido-principal" id="contenido-principal">
-
+ 
       <!--  SECCIÓN: INICIO -->
       <section id="inicio" class="pantalla pantalla-inicio" aria-labelledby="titulo-inicio">
         <h1 id="titulo-inicio">Bienvenido, Daniel</h1>
         <p>Encuentra personas con habilidades complementarias y empieza tu próximo proyecto.</p>
-
+ 
         <aside class="panel-complementario panel-usuario" aria-label="Resumen del usuario">
           <h2>Resumen de tu cuenta</h2>
           <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
@@ -77,7 +78,7 @@
           </div>
           <a href="descubrir.html" class="boton boton-principal">Descubrir compañeros</a>
         </aside>
-
+ 
         <section id="historias-amigos" class="bloque bloque-historias" aria-labelledby="titulo-historias">
           <h2 id="titulo-historias">Historias de amigos</h2>
           <p>Solo tus amigos aceptados pueden ver estas historias.</p>
@@ -99,7 +100,14 @@
             </li>
           </ul>
         </section>
-
+ 
+        <!-- Compositor de ideas: lleva a la creación de publicaciones. Pendiente de JavaScript: redacción en línea -->
+        <section id="compositor-ideas" class="bloque bloque-compositor" aria-labelledby="titulo-compositor">
+          <h2 id="titulo-compositor" class="texto-oculto">Comparte una idea</h2>
+          <img src="img/perfiles/daniel-rodriguez.jpg" alt="" class="foto-perfil foto-pequena">
+          <a href="crear-publicacion.html" class="compositor-enlace">Comparte una idea y encuentra ayuda…</a>
+        </section>
+ 
         <section class="bloque bloque-recientes" aria-labelledby="titulo-recientes">
           <h2 id="titulo-recientes">Publicaciones recientes</h2>
           <ul class="lista-enlaces">
@@ -108,7 +116,7 @@
             <li><a href="publicaciones.html#publicacion-3">Sebastián Mora busca compañeros para una aplicación móvil</a></li>
           </ul>
         </section>
-
+ 
         <section class="bloque bloque-recomendaciones" aria-labelledby="titulo-recomendaciones">
           <h2 id="titulo-recomendaciones">Recomendaciones de personas</h2>
           <ul class="lista-enlaces">
@@ -116,7 +124,7 @@
             <li><a href="personas-cercanas.html">Andrés Quesada: Python y bases de datos</a></li>
           </ul>
         </section>
-
+ 
         <section class="bloque bloque-accesos" aria-labelledby="titulo-accesos">
           <h2 id="titulo-accesos">Accesos rápidos</h2>
           <ul class="lista-accesos">
@@ -125,10 +133,10 @@
           </ul>
         </section>
       </section>
-
+ 
     </main>
   </div>
-
+ 
   <!--  SECCIÓN: FOOTER   -->
   <footer class="pie-pagina" id="pie-pagina">
     <p class="pie-nombre"><strong>Sinergia</strong></p>
@@ -139,6 +147,6 @@
       <li><a href="privacidad.html">Política de privacidad</a></li>
     </ul>
   </footer>
-
+ 
 </body>
 </html>
