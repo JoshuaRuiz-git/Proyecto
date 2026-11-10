@@ -1296,6 +1296,10 @@ body {
    24. Publicaciones: contenido, categoría y pie
    25. Comentarios
    26. Crear publicación
+   27. Compositor de ideas 
+   28. Pestañas de publicaciones
+   29. Encuentra tu tema
+   30. Vista previa de la publicación 
 */
 
 
@@ -1789,4 +1793,142 @@ body {
   .formulario-publicacion fieldset > :is([for="publicar-categoria"], #publicar-categoria) {
     grid-column: 1;
   }
+}
+
+/* 27. COMPOSITOR DE IDEAS */
+.pantalla-inicio > .bloque-compositor {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  padding: var(--espacio-3) var(--espacio-4);
+}
+
+.bloque-compositor > * + * {
+  margin-top: 0;
+}
+
+/* Enlace con aspecto de campo de texto: invita a escribir y lleva a Crear publicación */
+.compositor-enlace {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  min-height: var(--alto-control);
+  padding: var(--espacio-1) var(--espacio-4);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-completo);
+  background-color: var(--color-superficie-alt);
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  transition: border-color var(--transicion-rapida),
+              background-color var(--transicion-rapida),
+              color var(--transicion-rapida);
+}
+
+.compositor-enlace:hover {
+  border-color: var(--color-primario-borde);
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+}
+
+
+/* 28. PESTAÑAS DE PUBLICACIONES */
+.pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-2);
+}
+
+.pestana {
+  padding-inline: var(--espacio-4);
+  border-color: var(--color-borde);
+  border-radius: var(--radio-completo);
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto-secundario);
+  font-weight: var(--peso-medio);
+}
+
+.pestana[aria-pressed="true"] {
+  border-color: var(--color-primario);
+  background-color: var(--color-primario);
+  color: var(--color-sobre-primario);
+  box-shadow: var(--sombra-sm);
+}
+
+.pestana[aria-pressed="true"]:hover {
+  background-color: var(--color-primario-hover);
+  color: var(--color-sobre-primario);
+}
+
+
+/* 29. ENCUENTRA TU TEMA */
+/* Panel de tarjeta blanca */
+.panel-temas,
+.panel-vista-previa {
+  border-color: var(--color-borde);
+  background-color: var(--color-tarjeta);
+}
+
+.lista-temas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-2);
+}
+
+/* Las etiquetas de tema usan el componente de etiqueta */
+.enlace-tema {
+  gap: var(--espacio-1);
+  padding-block: var(--espacio-1);
+  text-decoration: none;
+  transition: border-color var(--transicion-rapida);
+}
+
+.enlace-tema:hover {
+  border-color: var(--etiqueta-texto);
+}
+
+.enlace-tema-secundario {
+  --etiqueta-fondo: var(--color-exito-suave);
+  --etiqueta-borde: var(--color-exito-borde);
+  --etiqueta-texto: var(--color-exito-texto);
+}
+
+.enlace-tema-acento {
+  --etiqueta-fondo: var(--color-advertencia-suave);
+  --etiqueta-borde: var(--color-advertencia-borde);
+  --etiqueta-texto: var(--color-advertencia-texto);
+}
+
+.enlace-tema-neutro {
+  --etiqueta-fondo: var(--color-superficie-alt);
+  --etiqueta-borde: var(--color-borde);
+  --etiqueta-texto: var(--color-texto-secundario);
+}
+
+.tema-contador::before {
+  content: "·";
+  content: "·" / "";
+  margin-inline-end: var(--espacio-1);
+}
+
+
+/* 30. VISTA PREVIA DE LA PUBLICACIÓN */
+.panel-vista-previa .publicacion-ejemplo {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.publicacion-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-2);
+}
+
+.nota-vista-previa {
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-tenue);
 }
