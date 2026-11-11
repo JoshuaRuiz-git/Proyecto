@@ -8,20 +8,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
+
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
       <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
- 
+
     <form class="buscador" role="search" method="get">
       <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
       <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
       <button type="submit" class="boton boton-buscar">Buscar</button>
     </form>
- 
+
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
       <button type="button" class="boton boton-notificaciones">
@@ -32,9 +32,9 @@
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
     </div>
   </header>
- 
+
   <div class="diseno-principal">
- 
+
     <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
     <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
       <ul class="menu-lateral">
@@ -51,31 +51,31 @@
         <li><a href="configuracion.html">Configuración</a></li>
       </ul>
     </nav>
- 
+
     <!--  SECCIÓN: MAIN  -->
     <main class="contenido-principal" id="contenido-principal">
- 
+
       <!--  SECCIÓN: PUBLICACIONES  -->
       <section id="publicaciones" class="pantalla pantalla-publicaciones" aria-labelledby="titulo-publicaciones">
         <h1 id="titulo-publicaciones">Publicaciones</h1>
         <p>Debes iniciar sesión para publicar, comentar o dar Me gusta.</p>
- 
+
         <!-- Pestañas de publicaciones. Pendiente de JavaScript: filtrar las secciones de abajo según data-filtro y actualizar aria-pressed -->
         <div class="pestanas" role="group" aria-label="Filtrar publicaciones por tipo">
           <button type="button" class="pestana" data-filtro="todas" aria-pressed="true" aria-controls="publicaciones-ocio publicaciones-academicas">Todas</button>
           <button type="button" class="pestana" data-filtro="ocio" aria-pressed="false" aria-controls="publicaciones-ocio">Ocio</button>
           <button type="button" class="pestana" data-filtro="academicas" aria-pressed="false" aria-controls="publicaciones-academicas">Académicas</button>
         </div>
- 
+
         <section id="publicaciones-ocio" class="bloque" aria-labelledby="titulo-ocio">
           <h2 id="titulo-ocio">Publicaciones de ocio</h2>
           <p>Aún no hay publicaciones de ocio. Comparte contenido social apropiado desde <a href="crear-publicacion.html">Crear publicación</a>.</p>
         </section>
- 
+
         <section id="publicaciones-academicas" class="bloque" aria-labelledby="titulo-academicas">
           <h2 id="titulo-academicas">Publicaciones académicas</h2>
           <p>Pide ayuda, comparte conocimientos, busca compañeros o presenta tus proyectos.</p>
- 
+
           <article id="publicacion-1" class="tarjeta publicacion">
             <header class="publicacion-cabecera">
               <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
@@ -99,7 +99,7 @@
               </form>
             </section>
           </article>
- 
+
           <article id="publicacion-2" class="tarjeta publicacion">
             <header class="publicacion-cabecera">
               <img src="img/perfiles/maria-fernandez.jpg" alt="Fotografía de perfil de María Fernández" class="foto-perfil foto-pequena">
@@ -123,7 +123,7 @@
               </form>
             </section>
           </article>
- 
+
           <article id="publicacion-3" class="tarjeta publicacion">
             <header class="publicacion-cabecera">
               <img src="img/perfiles/sebastian-mora.jpg" alt="Fotografía de perfil de Sebastián Mora" class="foto-perfil foto-pequena">
@@ -148,7 +148,7 @@
             </section>
           </article>
         </section>
- 
+
         <!-- Encuentra tu tema. Datos de ejemplo. Pendiente de JavaScript/backend: filtrar por categoría (el enlace envía ?categoria=) -->
         <aside id="encuentra-tema" class="panel-complementario panel-temas" aria-labelledby="titulo-temas">
           <h2 id="titulo-temas">Encuentra tu tema</h2>
@@ -161,10 +161,10 @@
           </ul>
         </aside>
       </section>
- 
+
     </main>
   </div>
- 
+
   <!--  SECCIÓN: FOOTER   -->
   <footer class="pie-pagina" id="pie-pagina">
     <p class="pie-nombre"><strong>Sinergia</strong></p>
@@ -175,5 +175,6 @@
       <li><a href="privacidad.html">Política de privacidad</a></li>
     </ul>
   </footer>
- 
+
 </body>
+</html>

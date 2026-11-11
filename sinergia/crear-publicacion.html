@@ -8,20 +8,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
+
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
       <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
- 
+
     <form class="buscador" role="search" method="get">
       <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
       <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
       <button type="submit" class="boton boton-buscar">Buscar</button>
     </form>
- 
+
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
       <button type="button" class="boton boton-notificaciones">
@@ -32,9 +32,9 @@
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
     </div>
   </header>
- 
+
   <div class="diseno-principal">
- 
+
     <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
     <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
       <ul class="menu-lateral">
@@ -51,10 +51,10 @@
         <li><a href="configuracion.html">Configuración</a></li>
       </ul>
     </nav>
- 
+
     <!--  SECCIÓN: MAIN  -->
     <main class="contenido-principal" id="contenido-principal">
- 
+
       <!--  SECCIÓN: CREAR PUBLICACIÓN  -->
       <section id="crear-publicacion" class="pantalla pantalla-crear" aria-labelledby="titulo-crear">
         <h1 id="titulo-crear">Crear publicación</h1>
@@ -62,13 +62,13 @@
         <form class="formulario formulario-publicacion" method="post" enctype="multipart/form-data">
           <fieldset>
             <legend>Datos de la publicación</legend>
- 
+
             <label for="publicar-nombre">Nombre del usuario</label>
             <input type="text" id="publicar-nombre" name="nombre" required autocomplete="name">
- 
+
             <label for="publicar-contenido">Contenido de la publicación</label>
             <textarea id="publicar-contenido" name="contenido" rows="5" required></textarea>
- 
+
             <label for="publicar-categoria">Categoría</label>
             <select id="publicar-categoria" name="categoria" required>
               <option value="">Selecciona una categoría</option>
@@ -79,14 +79,14 @@
               <option>Negocios</option>
               <option>Otra</option>
             </select>
- 
+
             <label for="publicar-tipo">Tipo de publicación</label>
             <select id="publicar-tipo" name="tipo" required>
               <option value="">Selecciona un tipo</option>
               <option value="ocio">Ocio</option>
               <option value="academico">Académico</option>
             </select>
- 
+
             <label for="publicar-imagen">Imagen (opcional)</label>
             <input type="file" id="publicar-imagen" name="imagen" accept="image/*">
           </fieldset>
@@ -94,7 +94,7 @@
           <!-- Pendiente de JavaScript: descartar los cambios y volver a la página anterior -->
           <button type="button" class="boton">Cancelar</button>
         </form>
- 
+
         <!-- Vista previa estática con datos de ejemplo. Pendiente de JavaScript: reflejar lo escrito en el formulario -->
         <aside id="vista-previa-publicacion" class="panel-complementario panel-vista-previa" aria-labelledby="titulo-vista-previa">
           <h2 id="titulo-vista-previa">Así lo verá tu comunidad</h2>
@@ -113,10 +113,10 @@
           <p class="nota-vista-previa">Vista previa de ejemplo. Aún no se ha publicado nada.</p>
         </aside>
       </section>
- 
+
     </main>
   </div>
- 
+
   <!--  SECCIÓN: FOOTER   -->
   <footer class="pie-pagina" id="pie-pagina">
     <p class="pie-nombre"><strong>Sinergia</strong></p>
@@ -127,7 +127,6 @@
       <li><a href="privacidad.html">Política de privacidad</a></li>
     </ul>
   </footer>
- 
+
 </body>
 </html>
- 
