@@ -2891,3 +2891,323 @@ body {
   line-height: var(--interlineado-titulo);
   color: var(--color-primario-texto);
 }
+
+/*
+   ETAPA 6 DE 7: ACCESO, VERIFICACIÓN, CONFIGURACIÓN Y PÁGINAS PÚBLICAS
+
+   Contenido:
+   44. Presentación pública (index)
+   45. Acerca de y textos legales
+   46. Acceso: crear cuenta, iniciar sesión y recuperar contraseña
+   47. Verificación de identidad
+   48. Configuración
+
+*/
+
+
+/* 44. PRESENTACIÓN PÚBLICA (index) */
+/* Titular, texto de apoyo y accesos. La fila de accesos amplía la de inicio */
+.pantalla-presentacion > h1 {
+  font-size: var(--texto-3xl);
+  letter-spacing: -0.02em;
+}
+
+.pantalla-presentacion > p {
+  max-width: var(--ancho-lectura);
+}
+
+.pantalla-presentacion > h1 + p {
+  font-size: var(--texto-lg);
+  line-height: var(--interlineado-sm);
+}
+
+.pantalla-presentacion .lista-accesos .boton {
+  min-height: 2.75rem;
+  padding-inline: var(--espacio-6);
+  font-size: var(--texto-md);
+}
+
+.pantalla-presentacion > .lista-accesos + p {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+}
+
+/* Cómo funciona: cada paso es una tarjeta numerada */
+.bloque-como-funciona {
+  margin-top: var(--espacio-10);
+}
+
+.bloque-como-funciona .lista-pasos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--espacio-4);
+  padding-left: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+/* 1 columna en móvil, 2 × 2 en anchos medios y los 4 pasos en una fila en escritorio (sin tarjeta suelta) */
+@media (min-width: 40rem) {
+  .bloque-como-funciona .lista-pasos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .bloque-como-funciona .lista-pasos {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.bloque-como-funciona .lista-pasos li {
+  margin-top: 0;
+  counter-increment: paso;
+  line-height: var(--interlineado-sm);
+}
+
+.bloque-como-funciona .lista-pasos li::before {
+  content: counter(paso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: var(--espacio-3);
+  border-radius: var(--radio-completo);
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+}
+
+.bloque-como-funciona > .lista-pasos + p {
+  max-width: var(--ancho-lectura);
+  margin-top: var(--espacio-5);
+  color: var(--color-texto-secundario);
+}
+
+
+/* 45. ACERCA DE Y TEXTOS LEGALES */
+
+.pantalla-acerca-de > :not(h1) {
+  max-width: var(--ancho-lectura);
+  line-height: 1.6;
+}
+
+.pantalla-acerca-de > h1 + p {
+  font-size: var(--texto-lg);
+  line-height: var(--interlineado-sm);
+}
+
+/* Términos y privacidad */
+.pantalla-legal {
+  max-width: 48rem;
+  padding: var(--espacio-8);
+}
+
+.texto-legal {
+  line-height: 1.6;
+}
+
+/* Preparado para el texto definitivo: subtítulos y listas */
+.texto-legal h2 {
+  margin-top: var(--espacio-8);
+  font-size: var(--texto-xl);
+}
+
+.texto-legal :is(ul, ol) {
+  padding-left: var(--espacio-5);
+}
+
+.texto-legal ul { list-style: disc; }
+.texto-legal ol { list-style: decimal; }
+
+
+/* 46. ACCESO: CREAR CUENTA, INICIAR SESIÓN Y RECUPERAR CONTRASEÑA */
+
+:is(.formulario-registro, .formulario-sesion, .formulario-preferencias) fieldset {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+:is(.formulario-registro, .formulario-sesion) legend {
+  padding: 0;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
+  color: var(--color-texto-secundario);
+}
+
+/* El primer campo no suma margen al del título del bloque */
+:is(.pantalla-acceso, .pantalla-configuracion) .formulario > :first-child {
+  margin-top: 0;
+}
+
+/* Casilla y etiqueta quedan en una misma fila; si la etiqueta ocupa varias líneas, el texto sigue alineado */
+:is(.formulario-registro, .formulario-sesion) fieldset {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+}
+
+:is(.formulario-registro, .formulario-sesion) fieldset > * {
+  grid-column: 1 / -1;
+}
+
+:is(.formulario-registro, .formulario-sesion) fieldset > :is(input[type="checkbox"], input[type="checkbox"] + label) {
+  grid-column: auto;
+  margin-top: var(--espacio-4);
+}
+
+:is(.formulario-registro, .formulario-sesion) fieldset > input[type="checkbox"] {
+  margin-top: calc(var(--espacio-4) + 0.1875rem);
+}
+
+/* Cuando se llega desde un enlace con ancla (por ejemplo, desde la presentación) se resalta la tarjeta, como en las publicaciones */
+.pantalla-acceso > .bloque:target {
+  border-color: var(--color-primario);
+  box-shadow: var(--anillo-foco);
+}
+
+/* Escritorio: crear cuenta a la izquierda; iniciar sesión y recuperar contraseña en la columna de la derecha */
+@media (min-width: 64rem) {
+  .pantalla-acceso {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: var(--espacio-6);
+    align-items: start;
+  }
+
+  .pantalla-acceso > :is(h1, p) {
+    grid-column: 1 / -1;
+  }
+
+  .pantalla-acceso > #registro {
+    grid-column: 1;
+    grid-row: 3 / span 2;
+  }
+
+  .pantalla-acceso > #inicio-sesion {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .pantalla-acceso > #recuperacion {
+    grid-column: 2;
+    grid-row: 4;
+  }
+}
+
+
+/* 47. VERIFICACIÓN DE IDENTIDAD */
+
+.formulario-verificacion .etapa > legend {
+  font-size: var(--texto-md);
+}
+
+/* Ritmo vertical dentro de cada etapa */
+.formulario-verificacion .etapa > :is(p, .vista-previa, .captura-facial, .instrucciones) {
+  margin-top: var(--espacio-4);
+}
+
+.etapa-documento > p,
+.etapa-facial > p {
+  font-size: var(--texto-sm);
+  line-height: var(--interlineado-sm);
+  color: var(--color-texto-secundario);
+}
+
+.etapa-documento .vista-previa p,
+.etapa-facial .captura-facial p {
+  margin: 0;
+}
+
+.etapa-facial .captura-facial {
+  min-height: 12rem;
+}
+
+/* Consentimiento: la casilla queda junto a su texto, que se alinea en varias líneas */
+.etapa-facial {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+}
+
+.etapa-facial > * {
+  grid-column: 1 / -1;
+}
+
+.etapa-facial > :is(input[type="checkbox"], input[type="checkbox"] + label) {
+  grid-column: auto;
+  margin-top: var(--espacio-4);
+}
+
+.etapa-facial > input[type="checkbox"] {
+  margin-top: calc(var(--espacio-4) + 0.1875rem);
+}
+
+.etapa-facial > input[type="checkbox"] + label {
+  line-height: var(--interlineado-sm);
+}
+
+/* Escritorio: */
+@media (min-width: 64rem) {
+  .pantalla-verificacion {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--ancho-panel);
+    column-gap: var(--espacio-6);
+    align-items: start;
+  }
+
+  .pantalla-verificacion > :is(h1, .aviso-privacidad) {
+    grid-column: 1 / -1;
+  }
+
+  .pantalla-verificacion > .formulario-verificacion {
+    grid-column: 1;
+  }
+
+  .pantalla-verificacion > .etapa-estado {
+    grid-column: 2;
+    margin-top: calc(var(--flujo-pantalla) + 0.625rem);   /* a la altura del borde de la etapa 1, no de su leyenda */
+  }
+}
+
+
+/* 48. CONFIGURACIÓN */
+
+.pantalla-configuracion {
+  max-width: var(--ancho-formulario);
+}
+
+/* Grupos de preferencias: título del grupo y, debajo, una casilla por fila */
+.formulario-preferencias fieldset {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0;
+  row-gap: var(--espacio-2);
+  align-items: center;
+}
+
+.formulario-preferencias fieldset > * {
+  grid-column: 1 / -1;
+}
+
+.formulario-preferencias fieldset > :is(input[type="checkbox"], input[type="checkbox"] + label) {
+  grid-column: auto;
+}
+
+.formulario-preferencias legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: var(--espacio-1);
+}
+
+/* "Usuarios bloqueados" usa el estado vacío de la sección 23. Aviso del cierre de sesión pendiente: */
+#cerrar-sesion-pendiente {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+}
+ 
