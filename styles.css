@@ -3211,3 +3211,21 @@ body {
   color: var(--color-texto-secundario);
 }
  
+/*
+   ETAPA 7 DE 7: RESPONSIVE, MODO OSCURO Y REVISIÓN FINAL
+
+   Contenido:
+   49. Adaptación a teléfono
+
+*/
+
+
+/* 49. ADAPTACIÓN A TELÉFONO */
+
+@media (max-width: 47.99rem) {
+  .pie-enlaces a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+  }
+}
