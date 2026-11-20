@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Encuentra personas con habilidades complementarias y empieza tu próximo proyecto.">
   <title>Inicio | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -62,7 +65,7 @@
 
         <aside class="panel-complementario panel-usuario" aria-label="Resumen del usuario">
           <h2>Resumen de tu cuenta</h2>
-          <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=420&amp;q=84" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
           <p><strong>Daniel Rodríguez</strong></p>
           <p>Estudiante de ingeniería informática</p>
           <dl class="datos-resumen">
@@ -85,14 +88,14 @@
           <ul class="lista-historias">
             <li class="historia" id="historia-andrea-solis">
               <figure>
-                <img src="img/historias/andrea-solis.jpg" alt="Historia de Andrea Solís: avance de su proyecto de diseño" class="foto-historia">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=84" alt="Historia de Andrea Solís: avance de su proyecto de diseño" class="foto-historia">
                 <figcaption>Andrea Solís</figcaption>
               </figure>
               <a href="#historia-andrea-solis" aria-label="Ver la historia de Andrea Solís">Ver historia</a>
             </li>
             <li class="historia" id="historia-luis-vargas">
               <figure>
-                <img src="img/historias/luis-vargas.jpg" alt="Historia de Luis Vargas: su espacio de estudio" class="foto-historia">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=900&amp;q=84" alt="Historia de Luis Vargas: su espacio de estudio" class="foto-historia">
                 <figcaption>Luis Vargas</figcaption>
               </figure>
               <a href="#historia-luis-vargas" aria-label="Ver la historia de Luis Vargas">Ver historia</a>
@@ -103,7 +106,7 @@
         <!-- Compositor de ideas: lleva a la creación de publicaciones. Pendiente de JavaScript: redacción en línea -->
         <section id="compositor-ideas" class="bloque bloque-compositor" aria-labelledby="titulo-compositor">
           <h2 id="titulo-compositor" class="texto-oculto">Comparte una idea</h2>
-          <img src="img/perfiles/daniel-rodriguez.jpg" alt="" class="foto-perfil foto-pequena">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=420&amp;q=84" alt="" class="foto-perfil foto-pequena">
           <a href="crear-publicacion.html" class="compositor-enlace">Comparte una idea y encuentra ayuda…</a>
         </section>
 
@@ -119,8 +122,8 @@
         <section class="bloque bloque-recomendaciones" aria-labelledby="titulo-recomendaciones">
           <h2 id="titulo-recomendaciones">Recomendaciones de personas</h2>
           <ul class="lista-enlaces">
-            <li><a href="personas-cercanas.html">Valeria Chaves: Frontend y UI/UX</a></li>
-            <li><a href="personas-cercanas.html">Andrés Quesada: Python y bases de datos</a></li>
+            <li><a href="perfil-valeria-chaves.html">Valeria Chaves: Frontend y UI/UX</a></li>
+            <li><a href="perfil-andres-quesada.html">Andrés Quesada: Python y bases de datos</a></li>
           </ul>
         </section>
 
@@ -147,5 +150,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

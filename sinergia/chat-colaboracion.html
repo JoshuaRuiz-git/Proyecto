@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Chat privado de trabajo para personas con match mutuo.">
   <title>Chat de colaboración | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -62,7 +65,7 @@
 
         <aside class="panel-complementario panel-companero" aria-labelledby="titulo-companero">
           <h2 id="titulo-companero">Tu compañero</h2>
-          <img src="img/perfiles/valeria-chaves.jpg" alt="Fotografía de perfil de Valeria Chaves" class="foto-perfil foto-mediana">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=420&amp;q=84" alt="Fotografía de perfil de Valeria Chaves" class="foto-perfil foto-mediana">
           <p><strong>Valeria Chaves</strong></p>
           <p>Habilidades complementarias: Frontend y UI/UX por su parte, Backend por la tuya.</p>
           <p>Afinidad: 88%</p>
@@ -116,5 +119,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

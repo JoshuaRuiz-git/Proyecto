@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Política de privacidad de Sinergia (texto provisional).">
+  <meta name="description" content="Política de privacidad ficticia del prototipo académico Sinergia.">
   <title>Política de privacidad | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="index.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="../index.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -27,7 +32,7 @@
   <!-- SECCIÓN: NAVEGACIÓN PÚBLICA -->
   <nav class="navegacion-publica" id="navegacion-publica" aria-label="Navegación pública">
     <ul class="menu-publico">
-      <li><a href="index.html">Inicio</a></li>
+      <li><a href="../index.html">Inicio</a></li>
       <li><a href="acerca-de.html">Acerca de</a></li>
     </ul>
   </nav>
@@ -38,7 +43,48 @@
     <!--  SECCIÓN: POLÍTICA DE PRIVACIDAD  -->
     <section id="privacidad" class="pantalla pantalla-legal texto-legal" aria-labelledby="titulo-privacidad">
       <h1 id="titulo-privacidad">Política de privacidad</h1>
-      <p>Texto legal provisional. Será redactado posteriormente.</p>
+      <p class="aviso-legal-demo"><strong>Política ficticia para un prototipo académico.</strong> Describe el comportamiento previsto de esta versión de demostración. No constituye una política legal definitiva ni debe utilizarse para un servicio en producción sin revisión profesional.</p>
+      <p><strong>Última actualización:</strong> 13 de noviembre de 2026.</p>
+
+      <h2>1. Responsable y alcance</h2>
+      <p>Sinergia es un proyecto educativo de demostración. No existe una organización comercial ni un responsable de tratamiento operativo detrás de esta maqueta. Este texto explica qué información puede quedar guardada en el navegador cuando se prueban sus funciones.</p>
+
+      <h2>2. Información que puede guardar el prototipo</h2>
+      <p>Algunas funciones utilizan el almacenamiento local del navegador para conservar preferencias y datos de prueba:</p>
+      <ul>
+        <li><strong>Cuenta de demostración:</strong> nombre, correo y contraseña utilizados para simular el acceso. En esta versión se almacenan localmente y sin el nivel de protección requerido para una aplicación real.</li>
+        <li><strong>Sesión:</strong> un indicador local que permite mantener el acceso mientras se navega por las páginas del prototipo.</li>
+        <li><strong>Preferencias:</strong> tema claro u oscuro y opciones de configuración seleccionadas.</li>
+        <li><strong>Interacciones:</strong> reacciones, comentarios escritos en las publicaciones y mensajes de demostración.</li>
+      </ul>
+      <p>Esta información se guarda en el navegador mediante mecanismos como <code>localStorage</code> y <code>sessionStorage</code>. No se envía a una base de datos central porque esta versión no tiene un backend conectado.</p>
+
+      <h2>3. Uso de los datos en la demostración</h2>
+      <p>Los datos locales se utilizan para mostrar que se pueden mantener preferencias, recordar interacciones y presentar una experiencia de navegación más completa. Los ejemplos no se utilizan para publicidad, elaboración de perfiles comerciales ni decisiones automatizadas sobre personas reales.</p>
+
+      <h2>4. Fotografías y recursos externos</h2>
+      <p>Algunas fotografías se cargan desde direcciones de images.unsplash.com. Para mostrarlas, el navegador solicita el recurso al proveedor externo. Esa solicitud puede implicar el intercambio de información técnica habitual de conexión, conforme a las políticas del proveedor. Las imágenes son ilustrativas y no identifican necesariamente a los perfiles ficticios del sitio.</p>
+
+      <h2>5. Contraseñas y seguridad</h2>
+      <p>La autenticación de esta maqueta no es segura para uso real: las cuentas y contraseñas de prueba se almacenan en el propio navegador. Por ello, se recomienda utilizar únicamente las credenciales de demostración y nunca introducir contraseñas reutilizadas o información sensible. Una versión de producción necesitaría autenticación del lado del servidor, contraseñas protegidas mediante hash seguro, controles de acceso y medidas adicionales de seguridad.</p>
+
+      <h2>6. Conservación y eliminación de la información</h2>
+      <p>Los datos permanecen en el navegador hasta que se sobrescriben o la persona usuaria los elimina. Se pueden borrar desde las opciones del navegador, utilizando la función para eliminar los datos del sitio o el almacenamiento local. Si se utiliza una ventana privada, el navegador puede eliminar estos datos al cerrar la sesión privada.</p>
+
+      <h2>7. Compartición de información</h2>
+      <p>El prototipo no dispone de un servidor para compartir perfiles, mensajes o comentarios con otras personas. Los datos de interacción que se guardan localmente no se sincronizan entre dispositivos. La única comunicación externa prevista por el diseño actual es la solicitud de fotografías alojadas por el proveedor de imágenes.</p>
+
+      <h2>8. Derechos y controles de la persona usuaria</h2>
+      <p>En esta demostración, la persona usuaria puede revisar y eliminar los datos locales mediante las herramientas del navegador. No existe todavía un mecanismo operativo para atender solicitudes formales de acceso, rectificación, eliminación o portabilidad. En una versión real se deberán habilitar canales para ejercer los derechos que correspondan según la normativa aplicable.</p>
+
+      <h2>9. Privacidad de menores y datos sensibles</h2>
+      <p>Este prototipo no debe utilizarse para recopilar datos reales de menores, información médica, financiera, documentos de identidad, ubicación precisa ni otros datos sensibles. Para un lanzamiento real se deberán definir medidas adecuadas de consentimiento, protección y uso según la edad de las personas usuarias y la legislación aplicable.</p>
+
+      <h2>10. Cambios a esta política</h2>
+      <p>El contenido puede actualizarse mientras se desarrolla el proyecto. Una versión real debe indicar qué cambió, cuándo entra en vigor y cómo se informará a las personas usuarias.</p>
+
+      <h2>11. Contacto y naturaleza del documento</h2>
+      <p>No hay un canal de privacidad operativo porque Sinergia es una maqueta sin backend. Antes de publicar un servicio real, se deberá identificar al responsable, facilitar un medio de contacto y solicitar una revisión profesional de esta política. Este texto tiene únicamente un propósito demostrativo.</p>
     </section>
 
   </main>
@@ -54,5 +100,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

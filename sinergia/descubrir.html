@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Configura tu búsqueda y encuentra compañeros con habilidades complementarias.">
   <title>Descubrir compañeros | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -173,7 +176,7 @@
           <!-- Pendiente de lógica de aplicación: ambos usuarios con emparejamiento activo, menores solo con menores,
                adultos solo con adultos y diferencia máxima de edad de tres años. El MATCH ocurre solo con interés mutuo. -->
           <article class="tarjeta tarjeta-candidato">
-            <img src="img/perfiles/laura-campos.jpg" alt="Fotografía de perfil de Laura Campos" class="foto-perfil foto-mediana">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=420&amp;q=84" alt="Fotografía de perfil de Laura Campos" class="foto-perfil foto-mediana">
             <h3>Laura Campos</h3>
             <p class="datos-basicos">22 años. Estudiante de diseño web en la Universidad de ejemplo.</p>
             <p>Disfruta construir interfaces claras y busca a alguien que lleve la lógica del servidor.</p>
@@ -202,7 +205,7 @@
             <div class="acciones-tarjeta">
               <button type="button" class="boton boton-principal">Mostrar interés</button>
               <button type="button" class="boton">Descartar</button>
-              <a href="perfil.html" class="boton">Ver perfil completo</a>
+              <a href="perfil-laura-campos.html" class="boton boton-perfil-disponible" aria-label="Ver perfil completo de Laura Campos">Ver perfil completo</a>
             </div>
           </article>
         </section>
@@ -222,5 +225,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

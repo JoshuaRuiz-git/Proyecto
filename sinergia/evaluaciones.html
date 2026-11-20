@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Evalúa a tus compañeros de colaboración y consulta tu reputación general.">
   <title>Evaluaciones y reputación | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -59,7 +62,7 @@
       <section id="evaluaciones" class="pantalla pantalla-evaluaciones" aria-labelledby="titulo-evaluaciones">
         <h1 id="titulo-evaluaciones">Evaluaciones y reputación</h1>
 
-        <!-- Pendiente de implementación: calificación funcional con estrellas -->
+        <!-- Evaluación local con persistencia en el navegador -->
         <form class="formulario formulario-evaluacion" method="post">
           <fieldset>
             <legend>Evaluar a un compañero</legend>
@@ -69,6 +72,18 @@
             <select id="evaluar-companero" name="companero" required>
               <option value="">Selecciona una persona</option>
               <option value="valeria-chaves">Valeria Chaves</option>
+              <option value="andres-quesada">Andrés Quesada</option>
+              <option value="sofia-vargas">Sofía Vargas</option>
+              <option value="diego-mendez">Diego Méndez</option>
+              <option value="paula-castillo">Paula Castillo</option>
+              <option value="laura-campos">Laura Campos</option>
+              <option value="andrea-solis">Andrea Solís</option>
+              <option value="luis-vargas">Luis Vargas</option>
+              <option value="maria-fernandez">María Fernández</option>
+              <option value="sebastian-mora">Sebastián Mora</option>
+              <option value="camila-jimenez">Camila Jiménez</option>
+              <option value="mateo-araya">Mateo Araya</option>
+              <option value="daniel-rodriguez">Daniel Rodríguez</option>
             </select>
           </fieldset>
 
@@ -117,6 +132,41 @@
             <input type="radio" id="equipo-5" name="equipo" value="5"><label for="equipo-5">5 estrellas</label>
           </fieldset>
 
+          <fieldset class="encuesta-colaboracion">
+            <legend>¿Cómo fue trabajar con esta persona?</legend>
+            <p>Estas preguntas complementan las estrellas y ayudan a conocer la experiencia real de colaboración.</p>
+            <label for="experiencia-comunicacion">¿Cómo fue la comunicación durante el proyecto?</label>
+            <select id="experiencia-comunicacion" name="experiencia-comunicacion" required>
+              <option value="">Selecciona una respuesta</option><option value="Fluida y constante">Fluida y constante</option><option value="Buena, con algunos ajustes">Buena, con algunos ajustes</option><option value="Irregular">Irregular</option><option value="Difícil">Difícil</option>
+            </select>
+            <label for="cumplimiento">¿Cómo fue el cumplimiento de las tareas y acuerdos?</label>
+            <select id="cumplimiento" name="cumplimiento" required>
+              <option value="">Selecciona una respuesta</option><option value="Cumplió todos los acuerdos">Cumplió todos los acuerdos</option><option value="Cumplió la mayoría">Cumplió la mayoría</option><option value="Necesitó recordatorios">Necesitó recordatorios</option><option value="No cumplió lo acordado">No cumplió lo acordado</option>
+            </select>
+            <label for="aporte">¿Cómo describirías su aporte al equipo?</label>
+            <select id="aporte" name="aporte" required>
+              <option value="">Selecciona una respuesta</option><option value="Aportó ideas y soluciones constantemente">Aportó ideas y soluciones constantemente</option><option value="Realizó adecuadamente las tareas asignadas">Realizó adecuadamente las tareas asignadas</option><option value="Participó de forma limitada">Participó de forma limitada</option><option value="Su aporte fue insuficiente">Su aporte fue insuficiente</option>
+            </select>
+            <label for="volveria">¿Volverías a trabajar con esta persona?</label>
+            <select id="volveria" name="volveria" required>
+              <option value="">Selecciona una respuesta</option><option value="Sí, definitivamente">Sí, definitivamente</option><option value="Sí, dependiendo del proyecto">Sí, dependiendo del proyecto</option><option value="No estoy seguro">No estoy seguro</option><option value="No">No</option>
+            </select>
+            <fieldset class="habilidades-evaluadas">
+              <legend>¿Qué habilidades demostró durante la colaboración?</legend>
+              <p>Selecciona solo las que observaste en el trabajo realizado.</p>
+              <div class="opciones-habilidades">
+                <label><input type="checkbox" name="habilidades" value="Programación"> Programación</label>
+                <label><input type="checkbox" name="habilidades" value="Diseño UX/UI"> Diseño UX/UI</label>
+                <label><input type="checkbox" name="habilidades" value="Resolución de problemas"> Resolución de problemas</label>
+                <label><input type="checkbox" name="habilidades" value="Comunicación"> Comunicación</label>
+                <label><input type="checkbox" name="habilidades" value="Organización"> Organización</label>
+                <label><input type="checkbox" name="habilidades" value="Investigación"> Investigación</label>
+                <label><input type="checkbox" name="habilidades" value="Creatividad"> Creatividad</label>
+                <label><input type="checkbox" name="habilidades" value="Trabajo en equipo"> Trabajo en equipo</label>
+              </div>
+            </fieldset>
+          </fieldset>
+
           <label for="evaluar-comentarios">Comentarios (opcional)</label>
           <textarea id="evaluar-comentarios" name="comentarios" rows="4"></textarea>
 
@@ -127,9 +177,9 @@
           <h2 id="titulo-resumen-reputacion">Resumen de reputación general</h2>
           <dl>
             <dt>Reputación sobre cinco estrellas</dt>
-            <dd>Sin colaboraciones evaluadas</dd>
+            <dd data-rating-average>Sin calificaciones</dd>
             <dt>Evaluaciones recibidas</dt>
-            <dd>0</dd>
+            <dd data-rating-count>0</dd>
           </dl>
         </section>
       </section>
@@ -148,5 +198,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

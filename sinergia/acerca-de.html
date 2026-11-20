@@ -1,61 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Qué es Sinergia, su propósito y cómo funciona el emparejamiento por habilidades.">
-  <title>Acerca de Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce Sinergia, una plataforma para conectar habilidades y desarrollar proyectos en equipo.">
+  <title>Acerca de Sinergia</title><link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
-  <!-- SECCIÓN: HEADER -->
-  <header class="encabezado-principal" id="encabezado">
-    <div class="marca">
-      <p class="marca-nombre"><a href="index.html">Sinergia</a></p>
-      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
-    </div>
-
-    <div class="encabezado-acciones">
-      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
-      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
-      <a href="acceso.html#inicio-sesion" class="enlace-acceso">Iniciar sesión</a>
-      <a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a>
-    </div>
-  </header>
-
-  <!-- SECCIÓN: NAVEGACIÓN PÚBLICA -->
-  <nav class="navegacion-publica" id="navegacion-publica" aria-label="Navegación pública">
-    <ul class="menu-publico">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="acerca-de.html" aria-current="page">Acerca de</a></li>
-    </ul>
-  </nav>
-
-  <!--  SECCIÓN: MAIN  -->
-  <main class="contenido-principal" id="contenido-principal">
-
-    <!--    SECCIÓN: ACERCA DE   -->
-    <section id="acerca-de" class="pantalla pantalla-acerca-de" aria-labelledby="titulo-acerca-de">
-      <h1 id="titulo-acerca-de">Acerca de Sinergia</h1>
-      <p>Sinergia es una red social para estudiantes y profesionales que quieren encontrar compañeros de colaboración. No es una aplicación de citas.</p>
-      <p>Su propósito es conectar personas para realizar trabajos de colegio, proyectos universitarios, páginas web, aplicaciones, emprendimientos y colaboraciones profesionales.</p>
-      <p>Cada persona indica qué domina y qué necesita aprender. La plataforma sugiere compañeros con habilidades complementarias, y cuando ambos muestran interés se produce un match y se habilita un chat de trabajo privado.</p>
-      <p>Así, quien domina el backend puede trabajar con quien domina el frontend, y ambos avanzan más rápido y aprenden del otro.</p>
+<header class="encabezado-principal" id="encabezado">
+  <div class="marca"><p class="marca-nombre"><a href="../index.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs><rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/><path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/></svg><span>Sinergia</span></a></p><p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p></div>
+  <div class="encabezado-acciones"><button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button><a href="acceso.html#inicio-sesion" class="enlace-acceso">Iniciar sesión</a><a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a></div>
+</header>
+<nav class="navegacion-publica" id="navegacion-publica" aria-label="Navegación pública"><ul class="menu-publico"><li><a href="../index.html">Inicio</a></li><li><a href="acerca-de.html" aria-current="page">Acerca de</a></li></ul></nav>
+<main class="contenido-principal contenido-acerca" id="contenido-principal">
+  <section id="acerca-de" class="pantalla pantalla-acerca-de pantalla-acerca-ampliada" aria-labelledby="titulo-acerca-de">
+    <section class="acerca-hero">
+      <div class="acerca-hero-contenido"><p class="etiqueta-seccion">UNA COMUNIDAD QUE CONSTRUYE</p><h1 id="titulo-acerca-de">Las mejores ideas crecen cuando se comparten.</h1><p>Sinergia conecta estudiantes y personas creativas que quieren aprender, compartir habilidades y convertir sus ideas en proyectos reales.</p><a href="acceso.html#registro" class="boton boton-principal">Únete a la comunidad</a></div>
+      <figure class="acerca-hero-imagen"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1600&amp;q=88" alt="Equipo de estudiantes colaborando alrededor de una mesa" loading="lazy"><figcaption>Compartir conocimientos hace que los proyectos lleguen más lejos.</figcaption></figure>
     </section>
-
-  </main>
-
-  <!--  SECCIÓN: FOOTER   -->
-  <footer class="pie-pagina" id="pie-pagina">
-    <p class="pie-nombre"><strong>Sinergia</strong></p>
-    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
-    <ul class="pie-enlaces">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="terminos.html">Términos y condiciones</a></li>
-      <li><a href="privacidad.html">Política de privacidad</a></li>
-    </ul>
-  </footer>
-
-</body>
-</html>
+    <section class="acerca-introduccion bloque"><p class="etiqueta-seccion">QUÉ ES SINERGIA</p><h2>Una red social enfocada en colaborar</h2><p>Sinergia es una plataforma de colaboración académica y profesional. No es una aplicación de citas: su objetivo es ayudar a encontrar compañeros para trabajos de colegio, proyectos universitarios, desarrollo de sitios web, aplicaciones, emprendimientos y otras actividades en equipo.</p><p>Cada persona puede mostrar qué habilidades domina, qué le interesa aprender y qué tipo de proyectos desea desarrollar. De esta forma, la comunidad puede encontrar personas con conocimientos complementarios.</p></section>
+    <section class="acerca-beneficios" aria-labelledby="acerca-beneficios-titulo"><div class="titulo-bloque"><div><p class="etiqueta-seccion">LO QUE NOS MUEVE</p><h2 id="acerca-beneficios-titulo">Aprender también es construir juntos</h2></div></div><div class="rejilla-tarjetas acerca-grid">
+      <article class="tarjeta acerca-feature"><span class="acerca-icono" aria-hidden="true">✦</span><h3>Conectar habilidades</h3><p>Encuentra personas que complementen lo que sabes y que aporten nuevas ideas a tus proyectos.</p></article>
+      <article class="tarjeta acerca-feature"><span class="acerca-icono" aria-hidden="true">↗</span><h3>Compartir conocimiento</h3><p>Publica recursos, preguntas y avances para aprender de las experiencias de otros compañeros.</p></article>
+      <article class="tarjeta acerca-feature"><span class="acerca-icono" aria-hidden="true">◎</span><h3>Crear en equipo</h3><p>Organiza conversaciones y colaboraciones para llevar una propuesta desde la idea hasta un prototipo.</p></article>
+    </div></section>
+    <section class="acerca-areas" aria-labelledby="acerca-areas-titulo">
+      <div class="titulo-bloque"><div><p class="etiqueta-seccion">ESPACIOS PARA CADA INTERÉS</p><h2 id="acerca-areas-titulo">Aprende, comparte y disfruta</h2><p>Sinergia reúne intereses académicos y actividades de ocio en espacios diferenciados.</p></div></div>
+      <div class="acerca-areas-grid">
+        <article class="acerca-area acerca-area-academica">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Estudiantes trabajando juntos en una mesa" loading="lazy">
+          <div><span>01 · APRENDIZAJE</span><h3>Área académica</h3><p>Encuentra compañeros para estudiar, resolver dudas, compartir recursos y desarrollar proyectos.</p><a href="acceso.html#registro" class="boton">Explorar comunidad</a></div>
+        </article>
+        <article class="acerca-area acerca-area-ocio">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Grupo de amigos compartiendo una actividad al aire libre" loading="lazy">
+          <div><span>02 · COMUNIDAD</span><h3>Área de ocio</h3><p>Conecta con personas que comparten pasatiempos, intereses creativos y actividades recreativas.</p><a href="acceso.html#registro" class="boton">Conocer personas</a></div>
+        </article>
+      </div>
+    </section>
+    <section class="acerca-como-funciona bloque" aria-labelledby="acerca-pasos-titulo"><p class="etiqueta-seccion">CÓMO FUNCIONA</p><h2 id="acerca-pasos-titulo">De una habilidad a un proyecto compartido</h2><ol class="acerca-pasos"><li><span>01</span><div><h3>Completa tu perfil</h3><p>Describe tus intereses, habilidades y el tipo de ayuda que puedes ofrecer.</p></div></li><li><span>02</span><div><h3>Descubre compañeros</h3><p>Explora perfiles y publicaciones de personas con objetivos o conocimientos afines.</p></div></li><li><span>03</span><div><h3>Conecta y conversa</h3><p>Cuando existe interés mutuo, puedes iniciar una conversación y planificar el trabajo.</p></div></li><li><span>04</span><div><h3>Construyan algo juntos</h3><p>Comparte avances, divide tareas y aprende durante el proceso de colaboración.</p></div></li></ol></section>
+    <section class="acerca-cierre"><div><p class="etiqueta-seccion">EL TALENTO SE MULTIPLICA</p><h2>Tu próxima gran colaboración puede empezar con una conversación.</h2><p>Conecta tus habilidades. Construye grandes proyectos.</p></div><a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a></section>
+  </section>
+</main>
+<footer class="pie-pagina" id="pie-pagina"><p class="pie-nombre"><strong>Sinergia</strong></p><p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p><ul class="pie-enlaces"><li><a href="acerca-de.html">Acerca de</a></li><li><a href="terminos.html">Términos y condiciones</a></li><li><a href="privacidad.html">Política de privacidad</a></li></ul></footer>
+<script src="../script.js" defer></script>
+</body></html>

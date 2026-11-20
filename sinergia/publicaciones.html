@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Publicaciones de ocio y académicas de la comunidad: pide ayuda, comparte conocimientos y busca compañeros.">
   <title>Publicaciones | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -58,98 +61,43 @@
       <!--  SECCIÓN: PUBLICACIONES  -->
       <section id="publicaciones" class="pantalla pantalla-publicaciones" aria-labelledby="titulo-publicaciones">
         <h1 id="titulo-publicaciones">Publicaciones</h1>
-        <p>Debes iniciar sesión para publicar, comentar o dar Me gusta.</p>
+        <p>Comparte ideas, encuentra colaboradores y participa en las publicaciones de la comunidad.</p>
 
-        <!-- Pestañas de publicaciones. Pendiente de JavaScript: filtrar las secciones de abajo según data-filtro y actualizar aria-pressed -->
+        <!-- Filtros dinámicos: JavaScript actualiza el tipo y la categoría visibles. -->
         <div class="pestanas" role="group" aria-label="Filtrar publicaciones por tipo">
           <button type="button" class="pestana" data-filtro="todas" aria-pressed="true" aria-controls="publicaciones-ocio publicaciones-academicas">Todas</button>
           <button type="button" class="pestana" data-filtro="ocio" aria-pressed="false" aria-controls="publicaciones-ocio">Ocio</button>
           <button type="button" class="pestana" data-filtro="academicas" aria-pressed="false" aria-controls="publicaciones-academicas">Académicas</button>
         </div>
 
+        <div class="barra-filtros-publicaciones">
+          <label for="filtro-categoria">Filtrar por categoría</label>
+          <select id="filtro-categoria" name="categoria">
+            <option value="todas">Todas las categorías</option>
+            <option value="programacion">Programación</option>
+            <option value="matematicas">Matemáticas</option>
+            <option value="desarrollo-de-aplicaciones">Desarrollo de aplicaciones</option>
+            <option value="diseno">Diseño</option>
+            <option value="idiomas">Idiomas</option>
+            <option value="ciencias">Ciencias</option>
+            <option value="negocios">Negocios</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+
         <section id="publicaciones-ocio" class="bloque" aria-labelledby="titulo-ocio">
           <h2 id="titulo-ocio">Publicaciones de ocio</h2>
-          <p>Aún no hay publicaciones de ocio. Comparte contenido social apropiado desde <a href="crear-publicacion.html">Crear publicación</a>.</p>
+          <p>Comparte intereses, actividades y proyectos con la comunidad.</p>
+          <div id="lista-publicaciones-ocio" class="feed-publicaciones" aria-live="polite"></div>
         </section>
 
         <section id="publicaciones-academicas" class="bloque" aria-labelledby="titulo-academicas">
           <h2 id="titulo-academicas">Publicaciones académicas</h2>
           <p>Pide ayuda, comparte conocimientos, busca compañeros o presenta tus proyectos.</p>
-
-          <article id="publicacion-1" class="tarjeta publicacion">
-            <header class="publicacion-cabecera">
-              <img src="img/perfiles/daniel-rodriguez.jpg" alt="Fotografía de perfil de Daniel Rodríguez" class="foto-perfil foto-pequena">
-              <h3>Daniel Rodríguez</h3>
-              <p><time datetime="2026-10-30">30 de octubre de 2026</time></p>
-              <a href="perfil.html" aria-label="Ver perfil del autor Daniel Rodríguez">Ver perfil del autor</a>
-            </header>
-            <p class="publicacion-contenido">Busco alguien que domine frontend para trabajar juntos en un proyecto de desarrollo web. Yo puedo encargarme del backend.</p>
-            <p class="publicacion-categoria">Categoría: Programación</p>
-            <footer class="publicacion-pie">
-              <p class="contador-me-gusta">12 Me gusta</p>
-              <button type="button" class="boton boton-me-gusta" aria-label="Me gusta a la publicación de Daniel Rodríguez">Me gusta</button>
-            </footer>
-            <section class="comentarios" aria-labelledby="comentarios-1">
-              <h4 id="comentarios-1">Comentarios (0)</h4>
-              <p>Aún no hay comentarios.</p>
-              <form class="formulario formulario-comentario" method="post">
-                <label for="comentario-1">Escribe un comentario</label>
-                <input type="text" id="comentario-1" name="comentario" required>
-                <button type="submit" class="boton" aria-label="Comentar la publicación de Daniel Rodríguez">Comentar</button>
-              </form>
-            </section>
-          </article>
-
-          <article id="publicacion-2" class="tarjeta publicacion">
-            <header class="publicacion-cabecera">
-              <img src="img/perfiles/maria-fernandez.jpg" alt="Fotografía de perfil de María Fernández" class="foto-perfil foto-pequena">
-              <h3>María Fernández</h3>
-              <p><time datetime="2026-10-29">29 de octubre de 2026</time></p>
-              <a href="perfil.html" aria-label="Ver perfil del autor María Fernández">Ver perfil del autor</a>
-            </header>
-            <p class="publicacion-contenido">Tengo buen dominio de matemáticas y puedo ayudar a personas que necesiten reforzar álgebra.</p>
-            <p class="publicacion-categoria">Categoría: Matemáticas</p>
-            <footer class="publicacion-pie">
-              <p class="contador-me-gusta">8 Me gusta</p>
-              <button type="button" class="boton boton-me-gusta" aria-label="Me gusta a la publicación de María Fernández">Me gusta</button>
-            </footer>
-            <section class="comentarios" aria-labelledby="comentarios-2">
-              <h4 id="comentarios-2">Comentarios (0)</h4>
-              <p>Aún no hay comentarios.</p>
-              <form class="formulario formulario-comentario" method="post">
-                <label for="comentario-2">Escribe un comentario</label>
-                <input type="text" id="comentario-2" name="comentario" required>
-                <button type="submit" class="boton" aria-label="Comentar la publicación de María Fernández">Comentar</button>
-              </form>
-            </section>
-          </article>
-
-          <article id="publicacion-3" class="tarjeta publicacion">
-            <header class="publicacion-cabecera">
-              <img src="img/perfiles/sebastian-mora.jpg" alt="Fotografía de perfil de Sebastián Mora" class="foto-perfil foto-pequena">
-              <h3>Sebastián Mora</h3>
-              <p><time datetime="2026-10-28">28 de octubre de 2026</time></p>
-              <a href="perfil.html" aria-label="Ver perfil del autor Sebastián Mora">Ver perfil del autor</a>
-            </header>
-            <p class="publicacion-contenido">Busco compañeros interesados en desarrollar una aplicación móvil desde cero.</p>
-            <p class="publicacion-categoria">Categoría: Desarrollo de aplicaciones</p>
-            <footer class="publicacion-pie">
-              <p class="contador-me-gusta">5 Me gusta</p>
-              <button type="button" class="boton boton-me-gusta" aria-label="Me gusta a la publicación de Sebastián Mora">Me gusta</button>
-            </footer>
-            <section class="comentarios" aria-labelledby="comentarios-3">
-              <h4 id="comentarios-3">Comentarios (0)</h4>
-              <p>Aún no hay comentarios.</p>
-              <form class="formulario formulario-comentario" method="post">
-                <label for="comentario-3">Escribe un comentario</label>
-                <input type="text" id="comentario-3" name="comentario" required>
-                <button type="submit" class="boton" aria-label="Comentar la publicación de Sebastián Mora">Comentar</button>
-              </form>
-            </section>
-          </article>
+          <div id="lista-publicaciones-academicas" class="feed-publicaciones" aria-live="polite"></div>
         </section>
 
-        <!-- Encuentra tu tema. Datos de ejemplo. Pendiente de JavaScript/backend: filtrar por categoría (el enlace envía ?categoria=) -->
+        <!-- Accesos rápidos por categoría: el filtro lee el parámetro categoria de la URL. -->
         <aside id="encuentra-tema" class="panel-complementario panel-temas" aria-labelledby="titulo-temas">
           <h2 id="titulo-temas">Encuentra tu tema</h2>
           <ul class="lista-temas">
@@ -176,5 +124,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>

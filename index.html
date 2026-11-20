@@ -12,15 +12,20 @@
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="index.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="index.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
-    <div class="encabezado-acciones">
+    <div class="encabezado-acciones" data-public-actions>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
-      <a href="acceso.html#inicio-sesion" class="enlace-acceso">Iniciar sesión</a>
-      <a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a>
+      <a href="sinergia/acceso.html#inicio-sesion" class="enlace-acceso">Iniciar sesión</a>
+      <a href="sinergia/acceso.html#registro" class="boton boton-principal">Crear cuenta</a>
     </div>
   </header>
 
@@ -28,7 +33,7 @@
   <nav class="navegacion-publica" id="navegacion-publica" aria-label="Navegación pública">
     <ul class="menu-publico">
       <li><a href="index.html" aria-current="page">Inicio</a></li>
-      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="sinergia/acerca-de.html">Acerca de</a></li>
     </ul>
   </nav>
 
@@ -38,12 +43,18 @@
     <!--  SECCIÓN: PRESENTACIÓN PÚBLICA  -->
     <section id="presentacion" class="pantalla pantalla-presentacion" aria-labelledby="titulo-presentacion">
       <h1 id="titulo-presentacion">Bienvenido a Sinergia</h1>
+      <div class="presentacion-banner" role="img" aria-label="Equipo de estudiantes colaborando alrededor de una computadora">
+        <div class="presentacion-banner-contenido">
+          <span class="presentacion-etiqueta">Conexiones que crean oportunidades</span>
+          <p>Encuentra a las personas que complementan tus habilidades.</p>
+        </div>
+      </div>
       <p>Sinergia es una red social para estudiantes y profesionales que quieren encontrar compañeros de colaboración. No es una aplicación de citas.</p>
       <p>Su propósito es conectar personas para realizar trabajos de colegio, proyectos universitarios, páginas web, aplicaciones, emprendimientos y colaboraciones profesionales.</p>
 
-      <ul class="lista-accesos">
-        <li><a href="acceso.html#registro" class="boton boton-principal">Crear cuenta</a></li>
-        <li><a href="acceso.html#inicio-sesion" class="boton">Iniciar sesión</a></li>
+      <ul class="lista-accesos lista-accesos-presentacion">
+        <li><a href="sinergia/acceso.html#registro" class="boton boton-principal">Crear cuenta</a></li>
+        <li><a href="sinergia/acceso.html#inicio-sesion" class="boton boton-acceso-secundario">Iniciar sesión</a></li>
       </ul>
       <p>Para publicar, comentar, enviar solicitudes, emparejarte o conversar necesitas una cuenta.</p>
 
@@ -66,11 +77,12 @@
     <p class="pie-nombre"><strong>Sinergia</strong></p>
     <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
     <ul class="pie-enlaces">
-      <li><a href="acerca-de.html">Acerca de</a></li>
-      <li><a href="terminos.html">Términos y condiciones</a></li>
-      <li><a href="privacidad.html">Política de privacidad</a></li>
+      <li><a href="sinergia/acerca-de.html">Acerca de</a></li>
+      <li><a href="sinergia/terminos.html">Términos y condiciones</a></li>
+      <li><a href="sinergia/privacidad.html">Política de privacidad</a></li>
     </ul>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>

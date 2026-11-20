@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conversaciones con tus amigos.">
   <title>Mensajes | Sinergia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
   <!-- SECCIÓN: HEADER -->
   <header class="encabezado-principal" id="encabezado">
     <div class="marca">
-      <p class="marca-nombre"><a href="inicio.html">Sinergia</a></p>
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
       <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
     </div>
 
@@ -24,9 +29,7 @@
 
     <div class="encabezado-acciones">
       <!-- Pendiente de JavaScript: panel de notificaciones -->
-      <button type="button" class="boton boton-notificaciones">
-        Notificaciones <span class="insignia">3</span>
-      </button>
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
       <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
       <!-- Pendiente de JavaScript: cambio dinámico de tema -->
       <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
@@ -58,45 +61,41 @@
       <!--  SECCIÓN: MENSAJES NORMALES  -->
       <section id="mensajes" class="pantalla pantalla-mensajes" aria-labelledby="titulo-mensajes">
         <h1 id="titulo-mensajes">Mensajes</h1>
+        <div class="mensajes-app" id="mensajes-app">
+          <aside class="lista-conversaciones" aria-label="Lista de conversaciones">
+            <div class="mensajes-lista-cabecera">
+              <div>
+                <h2>Chats</h2>
+                <p>Conversaciones de tu comunidad</p>
+              </div>
+              <span class="chat-total" data-chat-total aria-label="Mensajes sin leer">0</span>
+            </div>
+            <label class="chat-busqueda">
+              <span class="texto-oculto">Buscar conversación</span>
+              <input type="search" data-chat-search placeholder="Buscar conversación…" autocomplete="off">
+            </label>
+            <div class="conversaciones-lista" data-chat-list aria-label="Conversaciones disponibles"></div>
+          </aside>
 
-        <section class="lista-conversaciones" aria-labelledby="titulo-conversaciones">
-          <h2 id="titulo-conversaciones">Conversaciones</h2>
-          <ul>
-            <li class="conversacion">
-              <img src="img/perfiles/andrea-solis.jpg" alt="Fotografía de perfil de Andrea Solís" class="foto-perfil foto-pequena">
-              <p class="conversacion-nombre">Andrea Solís</p>
-              <p class="conversacion-ultimo">¿Revisamos el trabajo mañana?</p>
-              <p><time datetime="14:35">14:35</time></p>
-              <span class="insignia">2</span>
-            </li>
-            <li class="conversacion">
-              <img src="img/perfiles/luis-vargas.jpg" alt="Fotografía de perfil de Luis Vargas" class="foto-perfil foto-pequena">
-              <p class="conversacion-nombre">Luis Vargas</p>
-              <p class="conversacion-ultimo">Gracias por la ayuda con el ejercicio.</p>
-              <p><time datetime="11:10">11:10</time></p>
-            </li>
-          </ul>
-        </section>
-
-        <section class="conversacion-activa" aria-labelledby="titulo-conversacion-activa">
-          <h2 id="titulo-conversacion-activa">Conversación con Andrea Solís</h2>
-          <ol class="mensajes-lista">
-            <li class="mensaje mensaje-recibido">
-              <p>Hola Daniel, ¿cómo vas con la tarea?</p>
-              <p><time datetime="14:30">14:30</time></p>
-            </li>
-            <li class="mensaje mensaje-recibido">
-              <p>¿Revisamos el trabajo mañana?</p>
-              <p><time datetime="14:35">14:35</time></p>
-            </li>
-          </ol>
-          <!-- Pendiente de backend: mensajería en tiempo real -->
-          <form class="formulario formulario-mensaje" method="post">
-            <label for="mensaje-texto" class="texto-oculto">Escribe un mensaje</label>
-            <input type="text" id="mensaje-texto" name="mensaje" required placeholder="Escribe un mensaje">
-            <button type="submit" class="boton boton-principal">Enviar</button>
-          </form>
-        </section>
+          <section class="conversacion-activa" aria-label="Conversación seleccionada">
+            <header class="chat-cabecera">
+              <button type="button" class="boton chat-volver" data-chat-volver aria-label="Volver a la lista de conversaciones">Volver</button>
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=420&amp;q=84" alt="" class="foto-perfil foto-mediana" data-chat-avatar>
+              <div class="chat-identidad">
+                <h2 data-chat-nombre>Andrea Solís</h2>
+                <p data-chat-estado>Disponible para colaborar</p>
+                <a href="perfil-andrea-solis.html" class="chat-enlace-perfil" data-chat-profile>Ver perfil</a>
+              </div>
+            </header>
+            <ol class="mensajes-lista" data-chat-messages aria-label="Mensajes de la conversación seleccionada" aria-live="polite"></ol>
+            <p class="estado" data-chat-notice role="status" hidden></p>
+            <form class="formulario formulario-mensaje" id="formulario-mensaje" autocomplete="off">
+              <label for="mensaje-texto" class="texto-oculto">Escribe un mensaje</label>
+              <input type="text" id="mensaje-texto" name="mensaje" required maxlength="1000" placeholder="Escribe un mensaje…">
+              <button type="submit" class="boton boton-principal" aria-label="Enviar mensaje">Enviar</button>
+            </form>
+          </section>
+        </div>
       </section>
 
     </main>
@@ -113,5 +112,6 @@
     </ul>
   </footer>
 
+  <script src="../script.js" defer></script>
 </body>
 </html>
