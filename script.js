@@ -374,3 +374,5 @@ function iniciarSinergiaAcademica() {
 
 let publicaciones = obtenerPublicaciones();
 document.addEventListener('DOMContentLoaded', iniciarSinergiaAcademica);
+
+//Agregue un poco tarde esta etapa
