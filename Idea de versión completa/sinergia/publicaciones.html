@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publicaciones de ocio y académicas de la comunidad: pide ayuda, comparte conocimientos y busca compañeros.">
+  <title>Publicaciones | Sinergia</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN: HEADER -->
+  <header class="encabezado-principal" id="encabezado">
+    <div class="marca">
+      <p class="marca-nombre"><a href="inicio.html"><svg class="marca-simbolo" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="sinergia-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6575ea"/><stop offset="1" stop-color="#26b7a5"/></linearGradient></defs>
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="url(#sinergia-gradient)"/>
+          <path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="13.5" cy="17.5" r="3.1" fill="#fff"/><circle cx="34.5" cy="30.5" r="3.1" fill="#fff"/>
+        </svg><span>Sinergia</span></a></p>
+      <p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+    </div>
+
+    <form class="buscador" role="search" method="get">
+      <label for="buscador-texto" class="texto-oculto">Buscar personas, publicaciones o habilidades</label>
+      <input type="search" id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades">
+      <button type="submit" class="boton boton-buscar">Buscar</button>
+    </form>
+
+    <div class="encabezado-acciones">
+      <!-- Pendiente de JavaScript: panel de notificaciones -->
+      <a href="mensajes.html" class="boton boton-notificaciones" aria-label="Abrir mensajes y notificaciones">Notificaciones <span class="insignia">3</span></a>
+      <a href="perfil.html" class="enlace-perfil">Mi perfil</a>
+      <!-- Pendiente de JavaScript: cambio dinámico de tema -->
+      <button type="button" class="boton boton-tema" aria-pressed="false">Tema oscuro</button>
+    </div>
+  </header>
+
+  <div class="diseno-principal">
+
+    <!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+    <nav class="barra-lateral" id="navegacion-principal" aria-label="Navegación principal">
+      <ul class="menu-lateral">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="personas-cercanas.html">Personas cercanas</a></li>
+        <li><a href="descubrir.html">Descubrir compañeros</a></li>
+        <li><a href="publicaciones.html" aria-current="page">Publicaciones</a></li>
+        <li><a href="crear-publicacion.html">Crear publicación</a></li>
+        <li><a href="amigos.html">Amigos</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li><a href="mensajes.html">Mensajes</a></li>
+        <li><a href="perfil.html">Mi perfil</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <!--  SECCIÓN: MAIN  -->
+    <main class="contenido-principal" id="contenido-principal">
+
+      <!--  SECCIÓN: PUBLICACIONES  -->
+      <section id="publicaciones" class="pantalla pantalla-publicaciones" aria-labelledby="titulo-publicaciones">
+        <h1 id="titulo-publicaciones">Publicaciones</h1>
+        <p>Comparte ideas, encuentra colaboradores y participa en las publicaciones de la comunidad.</p>
+
+        <!-- Filtros dinámicos: JavaScript actualiza el tipo y la categoría visibles. -->
+        <div class="pestanas" role="group" aria-label="Filtrar publicaciones por tipo">
+          <button type="button" class="pestana" data-filtro="todas" aria-pressed="true" aria-controls="publicaciones-ocio publicaciones-academicas">Todas</button>
+          <button type="button" class="pestana" data-filtro="ocio" aria-pressed="false" aria-controls="publicaciones-ocio">Ocio</button>
+          <button type="button" class="pestana" data-filtro="academicas" aria-pressed="false" aria-controls="publicaciones-academicas">Académicas</button>
+        </div>
+
+        <div class="barra-filtros-publicaciones">
+          <label for="filtro-categoria">Filtrar por categoría</label>
+          <select id="filtro-categoria" name="categoria">
+            <option value="todas">Todas las categorías</option>
+            <option value="programacion">Programación</option>
+            <option value="matematicas">Matemáticas</option>
+            <option value="desarrollo-de-aplicaciones">Desarrollo de aplicaciones</option>
+            <option value="diseno">Diseño</option>
+            <option value="idiomas">Idiomas</option>
+            <option value="ciencias">Ciencias</option>
+            <option value="negocios">Negocios</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+
+        <section id="publicaciones-ocio" class="bloque" aria-labelledby="titulo-ocio">
+          <h2 id="titulo-ocio">Publicaciones de ocio</h2>
+          <p>Comparte intereses, actividades y proyectos con la comunidad.</p>
+          <div id="lista-publicaciones-ocio" class="feed-publicaciones" aria-live="polite"></div>
+        </section>
+
+        <section id="publicaciones-academicas" class="bloque" aria-labelledby="titulo-academicas">
+          <h2 id="titulo-academicas">Publicaciones académicas</h2>
+          <p>Pide ayuda, comparte conocimientos, busca compañeros o presenta tus proyectos.</p>
+          <div id="lista-publicaciones-academicas" class="feed-publicaciones" aria-live="polite"></div>
+        </section>
+
+        <!-- Accesos rápidos por categoría: el filtro lee el parámetro categoria de la URL. -->
+        <aside id="encuentra-tema" class="panel-complementario panel-temas" aria-labelledby="titulo-temas">
+          <h2 id="titulo-temas">Encuentra tu tema</h2>
+          <ul class="lista-temas">
+            <li><a href="publicaciones.html?categoria=programacion" class="enlace-tema">Programación <span class="tema-contador">28<span class="texto-oculto"> publicaciones</span></span></a></li>
+            <li><a href="publicaciones.html?categoria=matematicas" class="enlace-tema enlace-tema-secundario">Matemáticas <span class="tema-contador">18<span class="texto-oculto"> publicaciones</span></span></a></li>
+            <li><a href="publicaciones.html?categoria=desarrollo-de-aplicaciones" class="enlace-tema">Desarrollo de aplicaciones <span class="tema-contador">12<span class="texto-oculto"> publicaciones</span></span></a></li>
+            <li><a href="publicaciones.html?categoria=diseno" class="enlace-tema enlace-tema-acento">Diseño <span class="tema-contador">15<span class="texto-oculto"> publicaciones</span></span></a></li>
+            <li><a href="publicaciones.html?categoria=idiomas" class="enlace-tema enlace-tema-neutro">Idiomas <span class="tema-contador">6<span class="texto-oculto"> publicaciones</span></span></a></li>
+          </ul>
+        </aside>
+      </section>
+
+    </main>
+  </div>
+
+  <!--  SECCIÓN: FOOTER   -->
+  <footer class="pie-pagina" id="pie-pagina">
+    <p class="pie-nombre"><strong>Sinergia</strong></p>
+    <p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+    <ul class="pie-enlaces">
+      <li><a href="acerca-de.html">Acerca de</a></li>
+      <li><a href="terminos.html">Términos y condiciones</a></li>
+      <li><a href="privacidad.html">Política de privacidad</a></li>
+    </ul>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

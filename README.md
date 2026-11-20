@@ -42,6 +42,10 @@ El inicio de sesión es únicamente una comprobación local para fines de demost
 
 ## Alcance
 
-Esta versión está preparada como un ejercicio académico de JavaScript. Las publicaciones y el tema se guardan en el almacenamiento local del navegador. La sesión de demostración se mantiene en la pestaña actual. No existe una base de datos ni un servidor que comparta información entre dispositivos.
+Las publicaciones y el tema se guardan en el almacenamiento local del navegador. La sesión de demostración se mantiene en la pestaña actual. No existe una base de datos ni un servidor que comparta información entre dispositivos.
 
 Las demás secciones conservan su presentación visual, pero no todas cuentan con funciones reales. La cuenta de demostración y los datos de ejemplo no deben utilizarse como un sistema de seguridad o un servicio público.
+
+## Idea Principal
+
+Cuenta con una version completa de la idea principal la cual quiere alcanzar este sitio, con un almacenamiento interno y como demostración para un futuro trabajo en el sitio.

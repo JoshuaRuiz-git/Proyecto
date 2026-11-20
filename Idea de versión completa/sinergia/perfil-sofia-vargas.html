@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Perfil de Sofía Vargas, habilidades y colaboraciones en Sinergia." name="description"/>
+<title>Perfil de Sofía Vargas | Sinergia</title>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- SECCIÓN: HEADER -->
+<header class="encabezado-principal" id="encabezado">
+<div class="marca">
+<p class="marca-nombre"><a href="inicio.html"><svg aria-hidden="true" class="marca-simbolo" focusable="false" viewbox="0 0 48 48">
+<defs><lineargradient id="sinergia-gradient" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#6575ea"></stop><stop offset="1" stop-color="#26b7a5"></stop></lineargradient></defs>
+<rect fill="url(#sinergia-gradient)" height="46" rx="15" width="46" x="1" y="1"></rect>
+<path d="M14 17.5c2.2-3.1 6.2-4.8 10.1-4.2 3.7.5 6 2.4 8.8 5.6M34 30.5c-2.2 3.1-6.2 4.8-10.1 4.2-3.7-.5-6-2.4-8.8-5.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3.2"></path>
+<circle cx="13.5" cy="17.5" fill="#fff" r="3.1"></circle><circle cx="34.5" cy="30.5" fill="#fff" r="3.1"></circle>
+</svg><span>Sinergia</span></a></p>
+<p class="marca-eslogan">Conecta tus habilidades. Construye grandes proyectos</p>
+</div>
+<form class="buscador" method="get" role="search">
+<label class="texto-oculto" for="buscador-texto">Buscar personas, publicaciones o habilidades</label>
+<input id="buscador-texto" name="busqueda" placeholder="Buscar personas, publicaciones o habilidades" type="search"/>
+<button class="boton boton-buscar" type="submit">Buscar</button>
+</form>
+<div class="encabezado-acciones">
+<!-- Pendiente de JavaScript: panel de notificaciones -->
+<a aria-label="Abrir mensajes y notificaciones" class="boton boton-notificaciones" href="mensajes.html">Notificaciones <span class="insignia">3</span></a>
+<a class="enlace-perfil" href="perfil.html">Mi perfil</a>
+<!-- Pendiente de JavaScript: cambio dinámico de tema -->
+<button aria-pressed="false" class="boton boton-tema" type="button">Tema oscuro</button>
+</div>
+</header>
+<div class="diseno-principal">
+<!-- SECCIÓN: NAVEGACIÓN (barra lateral izquierda) -->
+<nav aria-label="Navegación principal" class="barra-lateral" id="navegacion-principal">
+<ul class="menu-lateral">
+<li><a href="inicio.html">Inicio</a></li>
+<li><a href="personas-cercanas.html">Personas cercanas</a></li>
+<li><a href="descubrir.html">Descubrir compañeros</a></li>
+<li><a href="publicaciones.html">Publicaciones</a></li>
+<li><a href="crear-publicacion.html">Crear publicación</a></li>
+<li><a href="amigos.html">Amigos</a></li>
+<li><a href="matches.html">Matches</a></li>
+<li><a href="mensajes.html">Mensajes</a></li>
+<li><a href="perfil.html">Mi perfil</a></li>
+<li><a href="acerca-de.html">Acerca de</a></li>
+<li><a href="configuracion.html">Configuración</a></li>
+</ul>
+</nav>
+<!--  SECCIÓN: MAIN  -->
+<main class="contenido-principal" id="contenido-principal">
+<!--  SECCIÓN: PERFIL  -->
+<section aria-labelledby="titulo-perfil" class="pantalla pantalla-perfil perfil-tema-coral" id="perfil">
+<h1 id="titulo-perfil">Perfil de Sofía Vargas</h1>
+<article class="tarjeta perfil-cabecera perfil-individual">
+<img alt="Fotografía de perfil de Sofía Vargas" class="foto-perfil foto-grande" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&amp;fit=crop&amp;w=420&amp;q=84"/>
+<h2>Sofía Vargas</h2>
+<p class="distintivo-verificado"><span class="distintivo-companero">Compañero de la comunidad</span></p>
+<p>Disfruta combinar ilustración, fotografía y diseño de interfaces. Busca compañeros para crear proyectos visuales con una identidad clara.</p>
+<p>Institución: Colegio técnico de ejemplo · Diseño digital</p>
+<p>Área de interés: Ilustración digital, diseño visual y contenido creativo</p>
+<!-- Pendiente de implementación: edición del perfil -->
+<span class="perfil-sello">Perfil de compañero</span>
+</article>
+<section aria-labelledby="perfil-publicaciones" class="bloque">
+<h2 id="perfil-publicaciones">Publicaciones</h2>
+<div class="feed-publicaciones feed-perfil" data-profile-posts="Sofía Vargas" aria-live="polite"></div>
+</section>
+<section aria-labelledby="perfil-estadisticas" class="bloque">
+<h2 id="perfil-estadisticas">Estadísticas de habilidades</h2>
+<section class="estadisticas estadisticas-declaradas">
+<h3>Habilidades declaradas por el usuario</h3>
+<ul class="lista-estadisticas">
+<li>
+<label for="sofia-vargas-habilidad-1">Diseño gráfico: 82%</label>
+<progress id="sofia-vargas-habilidad-1" max="100" value="82">82%</progress>
+</li>
+<li>
+<label for="sofia-vargas-habilidad-2">Ilustración digital: 75%</label>
+<progress id="sofia-vargas-habilidad-2" max="100" value="75">75%</progress>
+</li>
+<li>
+<label for="sofia-vargas-habilidad-3">UI/UX: 68%</label>
+<progress id="sofia-vargas-habilidad-3" max="100" value="68">68%</progress>
+</li>
+</ul>
+</section>
+<section class="estadisticas estadisticas-respaldadas" data-profile-key="sofia-vargas">
+<h3>Habilidades respaldadas por evaluaciones</h3>
+<p data-endorsed-empty>Aún no hay habilidades respaldadas por evaluaciones de compañeros.</p><ul class="lista-estadisticas lista-habilidades-respaldadas" data-endorsed-skills></ul>
+</section>
+</section>
+<section aria-labelledby="perfil-reputacion" class="bloque">
+<h2 id="perfil-reputacion">Reputación</h2>
+<p class="perfil-reputacion-dinamica"><strong data-profile-rating data-base-rating="4.7">4,7 de 5 estrellas</strong> · <span data-profile-rating-count data-base-count="5">5 colaboraciones realizadas</span></p>
+</section>
+<section aria-labelledby="perfil-historial" class="bloque">
+<h2 id="perfil-historial">Historial de colaboraciones</h2>
+<p>Ha participado en piezas gráficas para proyectos estudiantiles y presentaciones digitales.</p>
+</section>
+</section>
+</main>
+</div>
+<!--  SECCIÓN: FOOTER   -->
+<footer class="pie-pagina" id="pie-pagina">
+<p class="pie-nombre"><strong>Sinergia</strong></p>
+<p>Plataforma de colaboración académica y profesional. Todos los datos de ejemplo son ficticios.</p>
+<ul class="pie-enlaces">
+<li><a href="acerca-de.html">Acerca de</a></li>
+<li><a href="terminos.html">Términos y condiciones</a></li>
+<li><a href="privacidad.html">Política de privacidad</a></li>
+</ul>
+</footer>
+<script defer="" src="../script.js"></script>
+</body>
+</html>
